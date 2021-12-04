@@ -1,0 +1,47 @@
+<body>
+    <section id="signup-page">
+
+        <div id="signup-left">
+            <img src="../../public/images/towning-pictures/signup.jpeg" alt="Welcome to towning">
+        </div>
+
+        <div id="signup-right">
+            <a href="/">← Back to homepage</a>
+
+            <h2>Sign Up</h2>
+
+            <form action="/signup" method="POST">
+                <label for="username">
+                    Full Name
+                    <input type="text" placeholder="Name..." name="username">
+                </label>
+
+                <label for="useremail">
+                    Email
+                    <input type="text" placeholder="Email address..." name="useremail">
+                </label>
+
+                <label for="userpwd">
+                    Password
+                    <input type="password" placeholder="*********************" name="userpwd">
+                </label>
+
+                <label for="userpwdrepeat">
+                    Repeat Password
+                    <input type="password" placeholder="*********************" name="userpwdrepeat">
+                </label>
+
+                <label for="signedTerms">
+                    I agree to the Conditions of Use
+                    <input type="checkbox" name="signedTerms" value="yes">
+                </label>
+
+                <button>Sign Up</button>
+            </form>
+
+            <a href="/login">Log in →</a>
+        </div>
+
+    </section>
+
+</body>

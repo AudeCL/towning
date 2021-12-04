@@ -1,0 +1,38 @@
+<body>
+    <section id="homepage">
+        <div id="homepage-header">
+            <a href="/signup">Sign Up</a>
+            <a href="/login">Log In</a>
+        </div>
+        <div id="homepage-titles">
+            <h1>towning</h1>
+            <h3>I surely wanna go for a run in Berlin!</h3>
+            <div id="homepage-search">
+            <form action="/search-experience" method="GET">
+                <label for="experience">
+                    {{!Update schema value}}
+                    Experience
+                    <input type="text" name="experience">
+                </label>
+                <label for="location">
+                    {{!Update schema value}}
+                    Location
+                    <input type="text" name="location">
+                </label>
+                <label for="date">
+                    {{!Update schema value}}
+                    Date
+                    <input type="text" name="dateStart">
+                    <input type="text" name="dateEnd">
+                </label>
+                <button>Search</button>
+            </form>
+        </div>
+        <div id="homepage-search-city">
+            <h2>Where is your next stop?</h2>
+            <div>
+                <a href="">View more destinations</a>
+            </div>
+        </div>
+    </section>
+</body>
