@@ -1,1 +1,89 @@
-FORM TO EDIT USER PROFILE
+<body>
+    <section id="userprofile-edit-page">
+
+        <h1>Tell us more...</h1>
+
+        <div id="aboutyou-left">
+            <h3>> About you</h3>
+        </div>
+
+        <div id="aboutyou-right">
+            <form action="/editprofile" method="POST">
+                <label for="portrait">
+                    Picture
+                    <input type="image" placeholder="Download your picture" name="portrait">
+                </label>
+
+                <label for="username">
+                    Full Name
+                    <input type="text" placeholder="Name..." name="username">
+                </label>
+
+                <label for="useremail">
+                    Email
+                    <input type="text" placeholder="Email address..." name="useremail">
+                </label>
+
+                <label for="userpwd">
+                    Password
+                    <input type="password" placeholder="*********************" name="userpwd">
+                </label>
+
+                <label for="agegroup">
+                    Age
+                    <input type="text" placeholder="Choose your age group" name="agegroup">
+                </label>
+
+                <label for="location">
+                    Age
+                    <input type="text" placeholder="Choose your country" name="location">
+                </label>
+
+                <label for="userdescription">
+                    Describe yourself
+                    <input type="text" placeholder="Hello, I am..." name="userdescription">
+                </label>
+            </form>
+        </div> 
+
+        <div id="aboutyourexp-left">
+            <h3>> About your experience</h3>
+            <p>Gourmet, sporty or culture enthusiast? What would you like to experiment?</p>
+        </div>
+
+        <div id="aboutyourexp-right">
+
+            <form action="/editprofileexp" method="POST">
+                
+                <label for="foodexp">
+                    > Food experience
+                    <input type="checkbox" name="breakfast" value="yes"> Breakfast
+                    <input type="checkbox" name="lunch" value="yes"> Lunch
+                    <input type="checkbox" name="happyhour" value="yes"> Happy Hour
+                    <input type="checkbox" name="dinner" value="yes"> Dinner
+                </label>
+
+                <label for="sportexp">
+                    > Sports experience
+                    <input type="checkbox" name="running" value="yes"> Running
+                    <input type="checkbox" name="biking" value="yes"> Biking
+                    <input type="checkbox" name="yoga" value="yes"> Yoga
+                    <input type="checkbox" name="extremesports" value="yes"> Extreme sports
+                </label>
+
+                <label for="culturalexp">
+                    > Cultural experience
+                    <input type="checkbox" name="museum" value="yes"> Museums
+                    <input type="checkbox" name="mustsee" value="yes"> Must-see spots
+                    <input type="checkbox" name="unknown" value="yes"> Unknown spots
+                    <input type="checkbox" name="historical" value="yes"> Historical spots
+                </label>
+
+                <button>Save</button>
+            </form>
+
+        </div>
+
+    </section>
+
+</body>

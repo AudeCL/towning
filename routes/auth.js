@@ -19,10 +19,10 @@ router.get("/signup", (req, res) => {
 });
 
 router.post("/signup", /*isLoggedOut,*/ (req, res) => {
-  userName: req.body.username;
-  userEmail: req.body.useremail; 
-  passwordHash: req.body.userpwd;
-  signedTerms: req.body.signedTerms === 'yes' ? true : false;
+  const userName = req.body.username;
+  const userEmail = req.body.useremail; 
+  const passwordHash = req.body.userpwd;
+  const signedTerms = req.body.signedTerms === 'yes' ? true : false;
 
   if (!userName) {
     return res
@@ -78,7 +78,7 @@ router.post("/signup", /*isLoggedOut,*/ (req, res) => {
       })
       .then((userName) => {
         // Bind the user to the session object
-        req.session.userName = userName;
+        req.session.username = userName;
         res.redirect("/user-profile/edit");
       })
       .catch((error) => {
@@ -100,9 +100,9 @@ router.post("/signup", /*isLoggedOut,*/ (req, res) => {
   });
 });
 
-// router.get("/login", isLoggedOut, (req, res) => {
-//   res.render("auth/login");
-// });
+router.get("/login", /*isLoggedOut,*/ (req, res) => {
+   res.render("auth/login");
+});
 
 // router.post("/login", isLoggedOut, (req, res, next) => {
 //   const { userEmail, passwordHash } = req.body;
