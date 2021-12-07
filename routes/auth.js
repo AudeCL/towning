@@ -23,7 +23,7 @@ router.post("/signup", /*isLoggedOut,*/ (req, res) => {
   const userEmail = req.body.useremail; 
   const passwordHash = req.body.userpwd;
   const signedTerms = req.body.signedTerms === 'yes' ? true : false;
-
+  
   if (!userName) {
     return res
       .status(400)

@@ -8,40 +8,40 @@
         </div>
 
         <div id="aboutyou-right">
-            <form action="/editprofile" method="POST">
-                <label for="portrait">
+            <form action="/user-profile/edit/{{user.id}}" method="POST">
+                <label for="userpicture">
                     Picture
-                    <input type="image" placeholder="Download your picture" name="portrait">
+                    <input type="image" value="{{user.userpicture}}" placeholder="Download your picture" name="userpicture">
                 </label>
 
                 <label for="username">
                     Full Name
-                    <input type="text" placeholder="Name..." name="username">
+                    <input type="text" value="{{user.username}}" placeholder="Name..." name="username">
                 </label>
 
                 <label for="useremail">
                     Email
-                    <input type="text" placeholder="Email address..." name="useremail">
+                    <input type="text" value="{{user.useremail}}" placeholder="Email address..." name="useremail">
                 </label>
 
                 <label for="userpwd">
                     Password
-                    <input type="password" placeholder="*********************" name="userpwd">
+                    <input type="password" value="{{user.userpwd}}" placeholder="*********************" name="userpwd">
                 </label>
 
                 <label for="agegroup">
                     Age
-                    <input type="text" placeholder="Choose your age group" name="agegroup">
+                    <input type="text" value="{{user.agegroup}}" placeholder="Choose your age group" name="agegroup">
                 </label>
 
-                <label for="location">
-                    Age
-                    <input type="text" placeholder="Choose your country" name="location">
+                <label for="userlocation">
+                    Location
+                    <input type="text" value="{{user.userlocation}}" placeholder="Choose your country" name="userlocation">
                 </label>
 
                 <label for="userdescription">
                     Describe yourself
-                    <input type="text" placeholder="Hello, I am..." name="userdescription">
+                    <textarea placeholder="Hello, I am..." name="userdescription">{{user.userdescription}}</textarea> 
                 </label>
             </form>
         </div> 
