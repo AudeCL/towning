@@ -75,8 +75,29 @@ hr {
 }
 
 /* LOGIN STYLING */
-#login-left > img {
-  height: 50vh;
+#login-page {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  margin: 0;
+}
+
+#login-left {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  width: 40%;
+}
+
+#login-right {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+}
+
+#login-right > form {
+  display: flex;
+  flex-direction: column;
 }
 
 /* SIGNUP STYLING */

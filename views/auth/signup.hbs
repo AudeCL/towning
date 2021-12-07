@@ -42,6 +42,10 @@
             <a href="/login">Log in →</a>
         </div>
 
+        {{#if errorMessage}}
+            <p>{{errorMessage}}</p>
+        {{/if}}
+
     </section>
 
 </body>
