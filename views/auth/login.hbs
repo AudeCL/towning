@@ -1,4 +1,3 @@
-PAGE D'AUTHENTIFICATION
 <body>
     <section id="login-page">
 
@@ -8,6 +7,26 @@ PAGE D'AUTHENTIFICATION
 
         <div id="login-right">
             <a href="/">← Back to homepage</a>
+
+            <h2>Log In</h2>
+
+            <form action="/login" method="POST">
+                <label for="useremail">
+                    Email
+                    <input type="text" placeholder="Email address..." name="useremail">
+                </label>
+
+                <label for="userpwd">
+                    Password
+                    <input type="password" placeholder="*********************" name="userpwd">
+                </label>
+
+                <button>Log In</button>
+            </form>
+
+            <a href="">Forgot your password?</a>
+
+            <a href="/login">Sign up →</a>
         </div>
     </section>
 </body>
