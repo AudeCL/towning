@@ -24,6 +24,12 @@
                 <button>Log In</button>
             </form>
 
+            <div id="login-error">
+                {{#if errorMessage}}
+                <p>{{errorMessage}}</p>
+                {{/if}}
+            </div>
+
             <a href="">Forgot your password?</a>
 
             <a href="/login">Sign up →</a>

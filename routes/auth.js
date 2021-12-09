@@ -11,17 +11,13 @@ const salt = bcrypt.genSaltSync(saltRounds);
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
 
-// // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
-const isLoggedOut = require("../middleware/isLoggedOut");
-const isLoggedIn = require("../middleware/isLoggedIn");
-
 
 //USER REGISTRATION: SIGNUP
 router.get("/signup", (req, res) => {
   res.render("auth/signup");
 });
 
-router.post("/signup", isLoggedIn, (req, res, next) => {
+router.post("/signup", (req, res, next) => {
   console.log('Récupération de données', req.body)
   const userName = req.body.username;
   const userEmail = req.body.useremail; 
@@ -80,9 +76,9 @@ router.post("/signup", isLoggedIn, (req, res, next) => {
           passwordHash,
         });
       })
-      .then((userName) => {
+      .then((userFromDb) => {
         // Bind the user to the session object
-        req.session.username = userName;
+        req.session.currentUser = userFromDb
         res.redirect("/user-profile/edit");
       })
       .catch((error) => {
@@ -108,37 +104,35 @@ router.get("/login", (req, res, next) => {
 });
 
 router.post("/login", (req, res, next) => {
-  const { userEmail, passwordHash } = req.body;
+  const { useremail, userpwd } = req.body;
 
-  if (!userEmail) {
-    return res
-      .status(400)
-      .render("auth/login", { errorMessage: "Please provide your email." });
-  }
+
 
   // Search the database for a user with the email submitted in the form
-  User.findOne({ userEmail })
-    .then((userEmail) => {
+  User.findOne({ userEmail: useremail })
+    .then((userFromDB) => {
       // If the user isn't found, send the message that user provided wrong credentials
-      if (!userEmail) {
+      if (!userFromDB) {
         return res
           .status(400)
-          .render("auth/login", { errorMessage: "Wrong credentials." });
+          .render("auth/login", { errorMessage: "Wrong email." });
       }
 
       // If user is found based on the email, check if the in putted password matches the one saved in the database
-      bcrypt.compare(passwordHash, user.passwordHash).then((isSamePassword) => {
+      bcrypt.compare(userpwd, userFromDB.passwordHash).then((isSamePassword) => {
         if (!isSamePassword) {
           return res
             .status(400)
             .render("auth/login", { errorMessage: "Wrong credentials." });
         }
+        req.session.currentUser = userFromDB;
         return res.redirect("/");
       });
     })
 
     .catch((err) => {
       next(err);
+      // return res.status(500).render("auth/login", { errorMessage: err.message });
     });
 });
 

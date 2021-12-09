@@ -39,12 +39,19 @@
                 <button>Sign Up</button>
             </form>
 
+            <div id="signup-error">
+                {{#if errorMessage}}
+                <p>{{errorMessage}}</p>
+                {{/if}}
+            </div>
+
+            
+            
+
             <a href="/login">Log in →</a>
         </div>
 
-        {{#if errorMessage}}
-            <p>{{errorMessage}}</p>
-        {{/if}}
+        
 
     </section>
 
