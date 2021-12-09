@@ -21,6 +21,11 @@ h1 {
   margin: 0;
 }
 
+input, textarea, select, optgroup, option {
+  font-family: sans-serif;
+  font-size: 100%;
+}
+
 /* HOMEPAGE STYLING */
 #homepage {
   height: 80vh;
@@ -86,7 +91,7 @@ hr {
   display: flex;
   justify-content: center;
   overflow: hidden;
-  width: 40%;
+  width: 50%;
 }
 
 #login-right {
@@ -101,6 +106,65 @@ hr {
 }
 
 /* SIGNUP STYLING */
+#signup-page {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  margin: 0;
+}
+
+#signup-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 50%;
+}
+
 #signup-left > img {
-  height: 50vh;
+  width: 100%;
+  height: auto;
+}
+
+#signup-right {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+}
+
+#signup-right > form {
+  display: flex;
+  flex-direction: column;
+}
+
+/* NEW EPERIENCE FORM STYLING */
+#newxp-submit {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  margin: 0;
+}
+
+#newxp-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 50%;
+}
+
+#newxp-left > img {
+  width: 100%;
+  height: auto;
+}
+
+#newxp-right {
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+}
+
+#newxp-right > form {
+  display: flex;
+  flex-direction: column;
 }

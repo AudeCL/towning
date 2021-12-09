@@ -1,1 +1,70 @@
-FORM NEW EXPERIENCES
+<body>
+
+    <section id="newxp-submit">
+
+        <div id="newxp-left">
+            <img src="images/towning-pictures/new-experience.jpeg" alt="Submit a new Experience to towners">
+        </div>
+
+        <div id="newxp-right">
+            <div id="newxp-header">
+                <a href="/">← Back to homepage</a>
+                <h2>Suggest a new Experience</h2>
+            </div>
+            <form action="/new-experience/create" method="POST">
+                <label for="newxp-category">
+                    Category
+                    <select placeholder="Select one option from this list" name="newxp-category">
+                        <optgroup label="Food experience">
+                            <option value="food-breakfast">Breakfast</option>
+                            <option value="food-lunch">Lunch</option>
+                            <option value="food-happyhour">Happy Hour</option>
+                            <option value="food-dinner">Dinner</option>
+                        </optgroup>
+                        <optgroup label="Sports experience">
+                            <option value="sport-running">Running</option>
+                            <option value="sport-biking">Biking</option>
+                            <option value="sport-yoga">Yoga</option>
+                            <option value="sport-extreme">Extreme sports</option>
+                        </optgroup>
+                        <optgroup label="Cultural experience">
+                            <option value="culture-museum">Museums</option>
+                            <option value="culture-must">Must-see spots</option>
+                            <option value="culture-unknown">Unknown spots</option>
+                            <option value="culture-history">Historical spots</option>
+                        </optgroup>
+                    </select>
+                </label>
+
+                <label for="newxp-datetime">
+                    Date and Time
+                    <input type="date" name="newxp-date"
+                        value=""
+                        min="" max="2022-12-31">
+                    <input type="time" name="newxp-time"
+                        value="">
+                </label>
+
+                <label for="newxp-desc">
+                    Description
+                    <textarea name="newxp-desc" rows="5" cols="0">
+                    </textarea>
+                </label>
+
+                <label for="newxp-img">
+                    Experience Pic
+                    <input type="file" name="newxp-img" accept="image/png, image/jpeg">
+                </label>
+
+                <button>Submit</button>
+            </form>
+
+            <div id="newxp-error">
+                {{#if errorMessage}}
+                <p>{{errorMessage}}</p>
+                {{/if}}
+            </div>
+        </div>
+    </section>
+
+</body>
