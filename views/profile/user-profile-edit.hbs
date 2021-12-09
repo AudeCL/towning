@@ -3,86 +3,140 @@
 
         <h1>Tell us more...</h1>
 
-        <div id="aboutyou-left">
-            <h3>> About you</h3>
-        </div>
+        <article id="About1">
 
-        <div id="aboutyou-right">
-            <form action="/user-profile/edit/{{user.id}}" method="POST">
-                <label for="userpicture">
-                    Picture
-                    <input type="image" value="{{user.userpicture}}" placeholder="Download your picture" name="userpicture">
-                </label>
+            <div id="aboutyou-left">
+                <h3>&gt; About you</h3>
+            </div>
 
-                <label for="username">
-                    Full Name
-                    <input type="text" value="{{user.username}}" placeholder="Name..." name="username">
-                </label>
+            <div id="aboutyou-right">
+                <form action="/user-profile/edit/{{user.id}}" method="POST">
+                    <label for="userpicture">
+                        Picture
+                        <img class="userpicture" width="150px" src="{{user.userPicture}}"/>
+                    </label>
 
-                <label for="useremail">
-                    Email
-                    <input type="text" value="{{user.useremail}}" placeholder="Email address..." name="useremail">
-                </label>
+                    <label for="username">
+                        Full Name
+                        <input type="text" value="{{user.userName}}" name="username">
+                    </label>
 
-                <label for="userpwd">
-                    Password
-                    <input type="password" value="{{user.userpwd}}" placeholder="*********************" name="userpwd">
-                </label>
+                    <label for="useremail">
+                        Email
+                        <input type="text" value="{{user.userEmail}}" name="useremail">
+                    </label>
 
-                <label for="agegroup">
-                    Age
-                    <input type="text" value="{{user.agegroup}}" placeholder="Choose your age group" name="agegroup">
-                </label>
+                    <label for="userpwd">
+                        Password
+                        <input type="password" value="{{user.passwordHash}}" name="userpwd">
+                    </label>
 
-                <label for="userlocation">
-                    Location
-                    <input type="text" value="{{user.userlocation}}" placeholder="Choose your country" name="userlocation">
-                </label>
+                    <label for="agegroup">
+                        Age
+                        <input type="text" value="{{user.userAge}}" placeholder="Choose your age group" name="agegroup">
+                    </label>
 
-                <label for="userdescription">
-                    Describe yourself
-                    <textarea placeholder="Hello, I am..." name="userdescription">{{user.userdescription}}</textarea> 
-                </label>
-            </form>
-        </div> 
+                    <label for="userlocation">
+                        Location
+                        <select id="location-select">
+                            <option value="" selected="selected" hidden="hidden">Choose your country and city</option>
+                            <optgroup label="france">
+                                <option value="ajaccio">ajaccio</option>
+                                <option value="bordeaux">bordeaux</option>
+                                <option value="chambéry">chambéry</option>
+                                <option value="grenoble">grenoble</option>
+                                <option value="la rochelle">la rochelle</option>
+                                <option value="lyon">lyon</option>
+                                <option value="marseille">marseille</option>
+                                <option value="nantes">nantes</option>
+                                <option value="nice">nice</option>
+                                <option value="paris">paris</option>
+                                <option value="reims">reims</option>
+                                <option value="strasbourg">strasbourg</option>
+                                <option value="toulouse">toulouse</option>
+                            </optgroup>
+                            <optgroup label="great-britain">
+                                <option value="birmingham">birmingham</option>
+                                <option value="london">london</option>
+                                <option value="manchester">manchester</option>
+                            </optgroup>
+                            <optgroup label="spain">
+                                <option value="barcelona">barcelona</option>
+                                <option value="madrid">madrid</option>
+                                <option value="seville">seville</option>
+                            </optgroup>
+                            <optgroup label="germany">
+                                <option value="berlin">berlin</option>
+                                <option value="hamburg">hamburg</option>
+                                <option value="munich">munich</option>
+                            </optgroup>
+                            <optgroup label="turkey">
+                                <option value="ankara">ankara</option>
+                                <option value="istanbul">istanbul</option>
+                                <option value="izmir">izmir</option>
+                            </optgroup>
+                            <optgroup label="denmark">
+                                <option value="aarhus">aarhus</option>
+                                <option value="copenhagen">copenhagen</option>
+                                <option value="odense">odense</option>
+                            </optgroup>
+                            <optgroup label="serbia">
+                                <option value="belgrade">belgrade</option>
+                                <option value="prizen">prizen</option>
+                            </optgroup>
+                        </select>
+                    </label>
 
-        <div id="aboutyourexp-left">
-            <h3>> About your experience</h3>
-            <p>Gourmet, sporty or culture enthusiast? What would you like to experiment?</p>
-        </div>
+                    <label for="userdescription">
+                        Describe yourself
+                        <textarea placeholder="Hello, I am..." name="userDescription">{{user.userdescription}}</textarea> 
+                    </label>
+                </form>
+            </div>
 
-        <div id="aboutyourexp-right">
+        </article>
 
-            <form action="/editprofileexp" method="POST">
-                
-                <label for="foodexp">
-                    > Food experience
-                    <input type="checkbox" name="breakfast" value="yes"> Breakfast
-                    <input type="checkbox" name="lunch" value="yes"> Lunch
-                    <input type="checkbox" name="happyhour" value="yes"> Happy Hour
-                    <input type="checkbox" name="dinner" value="yes"> Dinner
-                </label>
+        <article id="About2">
 
-                <label for="sportexp">
-                    > Sports experience
-                    <input type="checkbox" name="running" value="yes"> Running
-                    <input type="checkbox" name="biking" value="yes"> Biking
-                    <input type="checkbox" name="yoga" value="yes"> Yoga
-                    <input type="checkbox" name="extremesports" value="yes"> Extreme sports
-                </label>
+            <div id="aboutyourexp-left">
+                <h3>&gt; About your experience</h3>
+                <p>Gourmet, sporty or culture enthusiast? What would you like to experiment?</p>
+            </div>
 
-                <label for="culturalexp">
-                    > Cultural experience
-                    <input type="checkbox" name="museum" value="yes"> Museums
-                    <input type="checkbox" name="mustsee" value="yes"> Must-see spots
-                    <input type="checkbox" name="unknown" value="yes"> Unknown spots
-                    <input type="checkbox" name="historical" value="yes"> Historical spots
-                </label>
+            <div id="aboutyourexp-right">
 
-                <button>Save</button>
-            </form>
+                <form action="/editprofileexp" method="POST">
+                    
+                    <label for="foodexp">
+                        &gt; Food experience
+                        <input type="checkbox" name="breakfast" value="yes"> Breakfast
+                        <input type="checkbox" name="lunch" value="yes"> Lunch
+                        <input type="checkbox" name="happyhour" value="yes"> Happy Hour
+                        <input type="checkbox" name="dinner" value="yes"> Dinner
+                    </label>
 
-        </div>
+                    <label for="sportexp">
+                        &gt; Sports experience
+                        <input type="checkbox" name="running" value="yes"> Running
+                        <input type="checkbox" name="biking" value="yes"> Biking
+                        <input type="checkbox" name="yoga" value="yes"> Yoga
+                        <input type="checkbox" name="extremesports" value="yes"> Extreme sports
+                    </label>
+
+                    <label for="culturalexp">
+                        &gt; Cultural experience
+                        <input type="checkbox" name="museum" value="yes"> Museums
+                        <input type="checkbox" name="mustsee" value="yes"> Must-see spots
+                        <input type="checkbox" name="unknown" value="yes"> Unknown spots
+                        <input type="checkbox" name="historical" value="yes"> Historical spots
+                    </label>
+
+                    <button>Save</button>
+                </form>
+
+            </div>
+
+        </article>
 
     </section>
 

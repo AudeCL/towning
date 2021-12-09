@@ -24,7 +24,7 @@ const userSchema = new Schema(
     userDesc: String, 
     userPicture: {
       type: String, 
-      default: "https://www.google.com/url?sa=i&url=https%3A%2F%2Fmd.usembassy.gov%2Four-relationship%2Four-ambassador%2Fformer-ambassadors%2Fprofile-icon%2F&psig=AOvVaw07qzSF4eokZ6BLYTObcYJI&ust=1638713795514000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCLDV1OGqyvQCFQAAAAAdAAAAABAO"
+      default: "https://d2v9ipibika81v.cloudfront.net/uploads/sites/210/Profile-Icon.png"
     },
     signedTerms : Boolean,
     passwordHash: String,

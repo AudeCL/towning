@@ -76,9 +76,9 @@ router.post("/signup", (req, res, next) => {
           passwordHash,
         });
       })
-      .then((userFromDb) => {
+      .then((userFromDB) => {
         // Bind the user to the session object
-        req.session.currentUser = userFromDb
+        req.session.currentUser = userFromDB
         res.redirect("/user-profile/edit");
       })
       .catch((error) => {

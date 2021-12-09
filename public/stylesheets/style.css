@@ -168,3 +168,34 @@ hr {
   display: flex;
   flex-direction: column;
 }
+
+/*USER EDIT PROFILE STYLING*/
+#userprofile-edit-page {
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  margin: 0;
+}
+
+#userprofile-edit-page > h1 {
+  font-size: 50px;
+}
+
+#about1, #about2 {
+  flex-direction: row;
+}
+
+#aboutyou-right {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+}
+
+#aboutyou-right > form {
+  flex-direction: column;
+}
+
+/*USER PROFILE STYLING*/
+#user-profile {
+  background-color: #00A482;
+}
