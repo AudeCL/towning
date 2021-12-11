@@ -13,30 +13,30 @@
             <form action="/signup" method="POST">
                 <label for="username">
                     Full Name
-                    <input type="text" placeholder="Name..." name="username">
+                    <input type="text" placeholder="Name..." name="username" class="form-input">
                 </label>
 
                 <label for="useremail">
                     Email
-                    <input type="text" placeholder="Email address..." name="useremail">
+                    <input type="text" placeholder="Email address..." name="useremail" class="form-input">
                 </label>
 
                 <label for="userpwd">
                     Password
-                    <input type="password" placeholder="*********************" name="userpwd">
+                    <input type="password" placeholder="*********************" name="userpwd" class="form-input">
                 </label>
 
                 <label for="userpwdrepeat">
                     Repeat Password
-                    <input type="password" placeholder="*********************" name="userpwdrepeat">
+                    <input type="password" placeholder="*********************" name="userpwdrepeat" class="form-input">
                 </label>
 
                 <label for="signedTerms">
-                    I agree to the Conditions of Use
                     <input type="checkbox" name="signedTerms" value="yes">
+                    I agree to the <a href="">Conditions of Use</a>
                 </label>
 
-                <button>Sign Up</button>
+                <button class="form-btn">Sign Up</button>
             </form>
 
             <div id="signup-error">
@@ -44,9 +44,6 @@
                 <p>{{errorMessage}}</p>
                 {{/if}}
             </div>
-
-            
-            
 
             <a href="/login">Log in →</a>
         </div>

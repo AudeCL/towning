@@ -3,7 +3,7 @@
     <section id="newxp-submit">
 
         <div id="newxp-left">
-            <img src="images/towning-pictures/new-experience.jpeg" alt="Submit a new Experience to towners">
+            <img src="/images/towning-pictures/new-experience.jpeg" alt="Submit a new Experience to towners">
         </div>
 
         <div id="newxp-right">
@@ -11,10 +11,11 @@
                 <a href="/">← Back to homepage</a>
                 <h2>Suggest a new Experience</h2>
             </div>
-            <form action="/new-experience/create" method="POST">
-                <label for="newxp-category">
+            <form action="/new-experience/create" method="POST" enctype="multipart/form-data" id="newxp-form">
+                <label>
                     Category
-                    <select placeholder="Select one option from this list" name="newxp-category">
+                    <select name="newxpcategory" class="form-input">
+                        <option value="">--select a category</option>
                         <optgroup label="Food experience">
                             <option value="food-breakfast">Breakfast</option>
                             <option value="food-lunch">Lunch</option>
@@ -36,35 +37,87 @@
                     </select>
                 </label>
 
-                <label for="newxp-datetime">
+                <label>
                     Date and Time
-                    <input type="date" name="newxp-date"
+                    <input type="date" name="newxpdate" class="form-input"
                         value=""
                         min="" max="2022-12-31">
-                    <input type="time" name="newxp-time"
+                    <input type="time" name="newxptime" class="form-input"
                         value="">
                 </label>
 
-                <label for="newxp-desc">
+                <label>
+                    Country and City
+                    <select name="newxpcountrycity" class="form-input">
+                        <option value="">Choose your country and city</option>
+                        <optgroup label="France">
+                            <option value="fr-ajaccio">Ajaccio</option>
+                            <option value="fr-bordeaux">Bordeaux</option>
+                            <option value="fr-chambéry">Chambéry</option>
+                            <option value="fr-grenoble">Grenoble</option>
+                            <option value="fr-larochelle">La Rochelle</option>
+                            <option value="fr-lyon">Lyon</option>
+                            <option value="fr-marseille">Marseille</option>
+                            <option value="fr-nantes">Nantes</option>
+                            <option value="fr-nice">Nice</option>
+                            <option value="fr-paris">Paris</option>
+                            <option value="fr-reims">Reims</option>
+                            <option value="fr-strasbourg">Strasbourg</option>
+                            <option value="fr-toulouse">Toulouse</option>
+                        </optgroup>
+                        <optgroup label="Great Britain">
+                            <option value="uk-birmingham">Birmingham</option>
+                            <option value="uk-london">London</option>
+                            <option value="uk-manchester">Manchester</option>
+                        </optgroup>
+                        <optgroup label="Spain">
+                            <option value="es-barcelona">Barcelona</option>
+                            <option value="es-madrid">Madrid</option>
+                            <option value="es-seville">Seville</option>
+                        </optgroup>
+                        <optgroup label="Germany">
+                            <option value="de-berlin">Berlin</option>
+                            <option value="de-hamburg">Hamburg</option>
+                            <option value="de-munich">Munich</option>
+                        </optgroup>
+                        <optgroup label="Turkey">
+                            <option value="tr-ankara">Ankara</option>
+                            <option value="tr-istanbul">Istanbul</option>
+                            <option value="tr-izmir">Izmir</option>
+                        </optgroup>
+                        <optgroup label="Denmark">
+                            <option value="dk-aarhus">Aarhus</option>
+                            <option value="dk-copenhagen">Copenhagen</option>
+                            <option value="dk-odense">Odense</option>
+                        </optgroup>
+                        <optgroup label="Serbia">
+                            <option value="rs-belgrade">Belgrade</option>
+                            <option value="rs-prizen">Prizen</option>
+                        </optgroup>
+                    </select>
+                </label>
+
+                <label>
                     Description
-                    <textarea name="newxp-desc" rows="5" cols="0">
-                    </textarea>
+                    <textarea name="newxpdesc" class="form-input" rows="5" cols="0"></textarea>
                 </label>
-
-                <label for="newxp-img">
+                
+                <label>
                     Experience Pic
-                    <input type="file" name="newxp-img" accept="image/png, image/jpeg">
+                    <input type="file" name="newxpimg" accept="image/png, image/jpeg">
                 </label>
+                
+                <div id="newxp-error">
+                    {{#if errorMessage}}
+                    <p>{{errorMessage}}</p>
+                    {{/if}}
+                </div>
 
-                <button>Submit</button>
+                <button class="form-btn">Submit</button>
             </form>
 
-            <div id="newxp-error">
-                {{#if errorMessage}}
-                <p>{{errorMessage}}</p>
-                {{/if}}
-            </div>
         </div>
+
     </section>
 
 </body>
