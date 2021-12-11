@@ -8,24 +8,98 @@
             <h1>towning</h1>
             <h3>I surely wanna go for a run in Berlin!</h3>
             <div id="homepage-search">
-            <form action="/search-experience" method="GET">
-                <label for="experience">
-                    {{!Update schema value}}
-                    Experience
-                    <input type="text" name="experience">
+            <form action="/search-experience" method="POST">
+                <label>
+                    Experience ↓
+                    <select name="xpcategory" class="hp-input">
+                        <option value="">--select a category</option>
+                        <optgroup label="Food experience">
+                            <option value="food-breakfast">Breakfast</option>
+                            <option value="food-lunch">Lunch</option>
+                            <option value="food-happyhour">Happy Hour</option>
+                            <option value="food-dinner">Dinner</option>
+                        </optgroup>
+                        <optgroup label="Sports experience">
+                            <option value="sport-running">Running</option>
+                            <option value="sport-biking">Biking</option>
+                            <option value="sport-yoga">Yoga</option>
+                            <option value="sport-extreme">Extreme sports</option>
+                        </optgroup>
+                        <optgroup label="Cultural experience">
+                            <option value="culture-museum">Museums</option>
+                            <option value="culture-must">Must-see spots</option>
+                            <option value="culture-unknown">Unknown spots</option>
+                            <option value="culture-history">Historical spots</option>
+                        </optgroup>
+                    </select>
                 </label>
-                <label for="location">
-                    {{!Update schema value}}
+
+                <label>
                     Location
-                    <input type="text" name="location">
+                    <select name="xpcountrycity" class="hp-input">
+                        <option value="">Choose a city</option>
+                        <optgroup label="France">
+                            <option value="fr-ajaccio">Ajaccio</option>
+                            <option value="fr-bordeaux">Bordeaux</option>
+                            <option value="fr-chambéry">Chambéry</option>
+                            <option value="fr-grenoble">Grenoble</option>
+                            <option value="fr-larochelle">La Rochelle</option>
+                            <option value="fr-lyon">Lyon</option>
+                            <option value="fr-marseille">Marseille</option>
+                            <option value="fr-nantes">Nantes</option>
+                            <option value="fr-nice">Nice</option>
+                            <option value="fr-paris">Paris</option>
+                            <option value="fr-reims">Reims</option>
+                            <option value="fr-strasbourg">Strasbourg</option>
+                            <option value="fr-toulouse">Toulouse</option>
+                        </optgroup>
+                        <optgroup label="Great Britain">
+                            <option value="uk-birmingham">Birmingham</option>
+                            <option value="uk-london">London</option>
+                            <option value="uk-manchester">Manchester</option>
+                        </optgroup>
+                        <optgroup label="Spain">
+                            <option value="es-barcelona">Barcelona</option>
+                            <option value="es-madrid">Madrid</option>
+                            <option value="es-seville">Seville</option>
+                        </optgroup>
+                        <optgroup label="Germany">
+                            <option value="de-berlin">Berlin</option>
+                            <option value="de-hamburg">Hamburg</option>
+                            <option value="de-munich">Munich</option>
+                        </optgroup>
+                        <optgroup label="Turkey">
+                            <option value="tr-ankara">Ankara</option>
+                            <option value="tr-istanbul">Istanbul</option>
+                            <option value="tr-izmir">Izmir</option>
+                        </optgroup>
+                        <optgroup label="Denmark">
+                            <option value="dk-aarhus">Aarhus</option>
+                            <option value="dk-copenhagen">Copenhagen</option>
+                            <option value="dk-odense">Odense</option>
+                        </optgroup>
+                        <optgroup label="Serbia">
+                            <option value="rs-belgrade">Belgrade</option>
+                            <option value="rs-prizen">Prizen</option>
+                        </optgroup>
+                    </select>
                 </label>
-                <label for="date">
-                    {{!Update schema value}}
-                    Date
-                    <input type="text" name="dateStart">
-                    <input type="text" name="dateEnd">
+
+                <label>
+                    Start Date
+                    <input type="date" name="xpdatestart" class="hp-input"
+                        value=""
+                        min="" max="2022-12-31">
                 </label>
-                <button>Search</button>
+
+                <label>
+                    End Date
+                    <input type="date" name="xpdatestart" class="hp-input"
+                        value=""
+                        min="" max="2022-12-31">
+                </label>
+
+                <button class="hp-btn">Search</button>
             </form>
         </div>
         <div id="homepage-search-city">
