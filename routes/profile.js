@@ -41,7 +41,21 @@ router.post("/user-profile/edit/:id", (req, res, next) => {
 
 /* GET Profile page */
 router.get("/user-profile/:id", (req, res, next) => {
-  res.render("profile/user-profile");
+  if(!req.session.currentUser){
+    res.redirect('/login');
+    return;
+  }
+  User.findById(req.session.currentUser._id)
+    .then(function(userFromDB){
+        console.log(userFromDB);
+        res.render("profile/user-profile", {
+        user: userFromDB
+      });
+    })
+    .catch(err=> {
+      console.log("Error in displaying the user profile");
+      next(err)
+    })
 });
 
 module.exports = router;

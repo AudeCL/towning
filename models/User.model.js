@@ -17,10 +17,7 @@ const userSchema = new Schema(
       Enum: ['18-25yo', '26-35yo', '36-45yo', '46-55yo', '56-65yo', 'More than 65yo', 'Not specified'],
       default: 'Not specified',
     },
-    userLocation: {
-      userCountry: String,
-      userCity: String, 
-    }, 
+    userLocation: String, 
     userDesc: String, 
     userPicture: {
       type: String, 
