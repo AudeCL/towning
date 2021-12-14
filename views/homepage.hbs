@@ -8,7 +8,7 @@
             <h1>towning</h1>
             <h3>I surely wanna go for a run in Berlin!</h3>
             <div id="homepage-search">
-            <form action="/search-experience" method="POST">
+            <form action="/search-experience" method="GET">
                 <label>
                     Experience ↓
                     <select name="xpcategory" class="hp-input">
@@ -94,12 +94,12 @@
 
                 <label>
                     End Date
-                    <input type="date" name="xpdatestart" class="hp-input"
+                    <input type="date" name="xpdateend" class="hp-input"
                         value=""
                         min="" max="2022-12-31">
                 </label>
 
-                <button class="hp-btn">Search</button>
+                <button class="hp-btn" href="/search-experience">Search</button>
             </form>
         </div>
         <div id="homepage-search-city">

@@ -1,1 +1,21 @@
-ALL EXPERIENCES
+<section>
+    <div>
+
+    </div>
+    <div>
+        {{#each experiences}}
+        {{! -- CHECK ON HOW TO COUNT experiences.length TO GET NBR RESULTS MATCHING SEARCH CRITERIA}}
+        <h3>{{experiences.length}} experiences in {{this.experienceLocation}} match your criteria</h3>
+        {{/each}}
+    </div>
+    <div>
+        {{#each experiences}}
+        {{this.experienceImg}}
+        <p>Your Host: {{this.experienceLocation}}</p>
+        <p>Experience Type: {{this.experienceType}}</p>
+        <p>Date and Time: {{this.experienceDateTime}}</p>
+        <p>Description: {{this.experienceDesc}}</p>
+        {{/each}}
+        <a href="">Register</a>
+    </div>
+</section>

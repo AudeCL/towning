@@ -2,7 +2,7 @@ const { Schema, model } = require("mongoose");
 
 const experienceSchema = new Schema(
   {
-   user_id: { type : Schema.Types.ObjectId, ref: 'User' },
+   experienceOwner: { type : Schema.Types.ObjectId, ref: 'User' },
    experienceType: {
        type: String, 
        Enum: ['Breakfast', 'Lunch', 'Dinner', 'Happy Hour', 'Running', 'Biking', 'Yoga', 'Extreme Sport', 'Museums', 'Must-see spots', 'Unknown spots', 'Historical spots', 'Other'],

@@ -8,7 +8,44 @@ const Experience = require("../models/Experience.model");
 
 /* GET Search Results (Experiences) page */
 router.get("/search-experience", (req, res, next) => {
-  res.render("experience/experience-results");
+  console.log('Message', req.query)
+
+  //
+  // search engine
+  //
+
+  const query = {}
+  if (req.query.xpcategory) {
+    query.experienceType = req.query.xpcategory
+  }
+  if (req.query.xpcountrycity) {
+    query.experienceLocation = req.query.xpcountrycity
+  }
+
+  const o = {}
+  if (req.query.xpdatestart) {
+    o.$gte = new Date(`${req.query.xpdatestart}T00:00:00.000Z`)
+  }
+  if (req.query.xpdateend) {
+    o.$lte = new Date(`${req.query.xpdateend}T23:59:00.000Z`)
+  }
+
+  if (Object.keys(o).length > 0) {
+    query.experienceDateTime = o
+  }
+  console.log('query=', query)
+
+  Experience.find(query)
+  .then(function (experiencesFromDB) {
+    console.log('experiencesFromDB', experiencesFromDB),
+    res.render("experience/experience-results", {
+      experiences : experiencesFromDB
+    });
+  })
+  .catch(function (err) {
+    console.log(err);
+    next(err); 
+  });
 });
 
 /* GET Submit New Experience FORM page */
@@ -17,11 +54,11 @@ router.get("/new-experience/create", (req, res, next) => {
   });
 
 router.post("/new-experience/create", fileUploader.single('newxpimg'), (req, res, next) => {
-  console.log('CHECK ON OUTPUTS',req.body, req.file)  
+  console.log('CHECK ON OUTPUTS',req.body, req.file, req.session)  
   //ENRICH WITH USER OWNER ID 
+    const experienceOwner = req.session.currentUser._id;
     const experienceType = req.body.newxpcategory;
     const experienceDateTime = new Date(`${req.body.newxpdate}T${req.body.newxptime}`);
-    const now = new Date(`2022-01-08T15:38:00.000+00:00`);
     const experienceLocation = req.body.newxpcountrycity;
     const experienceDesc = req.body.newxpdesc;
     const experienceImg = req.file.path;
@@ -47,7 +84,7 @@ router.post("/new-experience/create", fileUploader.single('newxpimg'), (req, res
     }
     
     Experience.create({
-      experienceType, experienceDateTime, experienceLocation, experienceDesc, experienceImg
+      experienceOwner, experienceType, experienceDateTime, experienceLocation, experienceDesc, experienceImg
     })
       .then(function (createdExperience) {
         res.redirect("/"); // REVOIR OU ON FAIT LE REDIRECT A LA SOUMISSION DU FORM
