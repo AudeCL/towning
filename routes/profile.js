@@ -56,6 +56,26 @@ router.get("/user-profile/:id", (req, res, next) => {
       console.log("Error in displaying the user profile");
       next(err)
     })
-});
+  /*Experience.find({participants: { $in: ["req.session.currentUser._id"]}})
+    .then(function(experiencesFromDB){
+      res.render("profile/user-profile", {
+        travellerExperience: experiencesFromDB,
+      })
+    })
+    .catch(err=> {
+      console.log("Error in displaying the traveller experiences in the user profile");
+      next(err)
+    })
+  Experience.find({user: "req.session.currentUser._id"})
+    .then(function(experiencesFromDB){
+      res.render("profile/user-profile", {
+        HoteExperience: experiencesFromDB,
+      })
+    })
+    .catch(err=> {
+      console.log("Error in displaying the hote experiences in the user profile");
+      next(err)
+    })*/
+})
 
 module.exports = router;
