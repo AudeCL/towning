@@ -302,4 +302,122 @@ hr {
 /*USER PROFILE STYLING*/
 #user-profile {
   background-color: #00A482;
+  display: flex;
+  flex-direction: row;
+  height: 80vh;
+  margin: 0;
+}
+
+#hp-logo {
+  margin-top: 28px;
+  margin-left: 28px;
+}
+
+#profile-menu {
+  margin-top: 123px;
+  margin-left: 25vh;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  width: 25vh;
+  margin-right: 20px;
+}
+
+#search-button {
+  margin-top: 120px;
+}
+
+#search-button > a {
+  text-decoration: none;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#profile-content,
+#profile-experience-traveller,
+#profile-experience-hote {
+  display: flex;
+  width: 80vh;
+  height: 60vh;
+  background-color: #C4C4C4;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-top: 123px;
+  margin-left: 40px;
+}
+
+.edit-link {
+  font-size: 0.8em;
+  color: #305bf1;
+  margin-left: 550px;
+}
+
+#profile-btn-profile,
+#profile-btn-traveller,
+#profile-btn-hote {
+  height: 7vh;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 0.95em;
+  font-weight: bold;
+  background-color: #B3AA99;
+  border: 1px solid black;
+  border-radius: 8px;
+}
+
+.profile-content-picture {
+  border-radius:50%;
+  width:160px;
+  height:160px;
+  background-color: white;
+  border:1px solid black;
+  box-shadow: 9px 5px 5px grey;
+  margin-top: 65px;
+  margin-left: 95px;
+  float: left;
+}
+
+.profile-content-username{
+  font-size: 2em;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 60px;
+  margin-top: 95px;
+}
+
+.profile-content-location {
+  font-size: 1.5em;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 60px;
+  margin-top: 10px;
+}
+
+.profile-content-age,
+.profile-experience-traveller-reviews,
+.profile-experience-hote-reviews {
+  font-size: 1.2em;
+  font-weight: bold;
+  display: inline-block;
+  margin-left: 60px;
+  margin-top: 10px;
+}
+
+.profile-content-description {
+  height: 20vh;
+  width: 60vh;
+  background-color: #e4dcdc;
+  border-radius: 8px;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 10px;
+  align-content: center;
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.fa-star.checked {
+  color:yellow;
 }
