@@ -46,41 +46,35 @@ router.get("/user-profile/:id", (req, res, next) => {
     res.redirect('/login');
     return;
   }
-/*User.findById(req.session.currentUser._id)
+  User.findById(req.session.currentUser._id)
     .then(function(userFromDB){
         console.log(userFromDB);
         Experience.find({participants: { $in: [userFromDB._id]}})
-        .then(function(experiencesFromDB){
-          res.render("profile/user-profile", {
-            user: userFromDB,
-            travellerExperience: experiencesFromDB,
+          .then(function(experiencesFromDB){
+            Experience.find({user: req.session.currentUser._id})
+              .then(function(expFromDB) {
+                res.render("profile/user-profile", {
+                  user: userFromDB,
+                  travellerExperience: experiencesFromDB,
+                  hoteExperience: expFromDB,
+                })
+              })
+              .catch(err => {
+                console.log("Error in displaying the hote experiences in the user profile");
+                next(err)
+              })
           })
-        })
-        .catch(err=> {
-          console.log("Error in displaying the traveller experiences in the user profile");
-          next(err)
-        })
-        /*res.render("profile/user-profile", {
-        user: userFromDB
-      });
+          .catch(err=> {
+            console.log("Error in displaying the traveller experiences in the user profile");
+            next(err)
+          })
     })
     .catch(err=> {
       console.log("Error in displaying the user profile");
       next(err)
-    })*/
-
-/*Experience.find({user: "req.session.currentUser._id"})
-    .then(function(experiencesFromDB){
-      res.render("profile/user-profile", {
-        HoteExperience: experiencesFromDB,
-      })
     })
-    .catch(err=> {
-      console.log("Error in displaying the hote experiences in the user profile");
-      next(err)
-    })*/
 
-  User.findById(req.session.currentUser._id)
+  /*User.findById(req.session.currentUser._id)
     .then(function(userFromDB){
         console.log(userFromDB);
         res.render("profile/user-profile", {
@@ -90,7 +84,7 @@ router.get("/user-profile/:id", (req, res, next) => {
     .catch(err=> {
       console.log("Error in displaying the user profile");
       next(err)
-    })
+    })*/
 })
 
 module.exports = router;

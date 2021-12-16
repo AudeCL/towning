@@ -1,6 +1,6 @@
 <body>
     <section id="userprofile-edit-page">
-        <h3><a href="/">towning</a></h3>
+        <h3 id="hp-logo"><a href="/">towning</a></h3>
 
         <h1>Tell us more...</h1>
 
@@ -15,6 +15,7 @@
                     <label for="userpicture">
                         Picture
                         <img class="userpicture" width="150px" src="{{user.userPicture}}" alt="Profile picture"/>
+                        <input type="file" name="profileimg" accept="image/png, image/jpeg">
                     </label>
 
                     <label for="username">

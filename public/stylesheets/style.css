@@ -281,6 +281,11 @@ hr {
   margin: 0;
 }
 
+#hp-logo {
+  margin-top: 28px;
+  margin-left: 28px;
+}
+
 #userprofile-edit-page > h1 {
   font-size: 50px;
 }
@@ -421,3 +426,4 @@ hr {
 .fa-star.checked {
   color:yellow;
 }
+
