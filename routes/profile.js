@@ -30,7 +30,7 @@ router.post("/user-profile/edit/:id", fileUploader.single('profileimg'), (req, r
     userAge: req.body.agegroup,
     userLocation: req.body.location,
     userDesc: req.body.userdescription,
-    userPicture: req.file
+    userPicture: req.file.path
     }, {new: true})
       .then(function(updatedUser) {
         res.redirect(`/user-profile/${updatedUser.id}`)

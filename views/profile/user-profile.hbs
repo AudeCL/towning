@@ -63,9 +63,9 @@
                 <ul>
                     {{#each travellerExperience}}
                     <li>
-                        {{this.experienceLocation}}
-                        {{this.experienceType}}
                         <img class="experience-picture" width="150px" src="/images/towning-pictures/ExperienceCartoon.jpg" alt="Experience image"/>
+                        <div class="txt-img1">{{this.experienceLocation}}</div>
+                        <div class="txt-img2"></div>{{this.experienceType}}</div>
                     </li>
                     {{else}} 
                         <li>No experience yet!</li>
@@ -97,9 +97,9 @@
                 <ul>
                     {{#each hoteExperience}}
                     <li>
-                        {{this.experienceType}}
-                        <!--{{this.experienceDateTime}}-->
                         <img class="experience-picture" width="150px" src="/images/towning-pictures/ExperienceCartoon.jpg" alt="Experience image"/>
+                        <div class="txt-img1">{{this.experienceType}}</div>
+                        <!--<div class="txt-img2">{{this.experienceDateTime}}</div>-->
                         <form action="/new-experience/{{_id}}/delete" method="POST">
                             <button>Delete</button>
                         </form>

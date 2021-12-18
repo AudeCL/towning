@@ -412,6 +412,48 @@ hr {
   margin-left: 100px;
 }
 
+.profile-experience-traveller-cards,
+.profile-experience-hote-cards {
+  display: flex;
+  flex-direction: column;
+  width: 585px;
+  height: 300px;
+  margin-top: 15px;
+  margin-left: 60px;
+}
+
+.profile-experience-traveller-cards > ul,
+.profile-experience-hote-cards > ul {
+  width: 160px;
+  height: 180px;
+  list-style: none;
+}
+
+.profile-experience-traveller-cards > ul > li,
+.profile-experience-hote-cards > ul > li {
+  width: 160px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.9em;
+}
+
+.experience-picture {
+  border-radius: 8px;
+  position: relative;
+}
+
+.txt-img {
+  position: absolute;
+  z-index: 1;
+  margin-top: 100px;
+  margin-left: 10px;
+}
+
+.profile-experience-hote-cards > ul > li > form > button {
+  margin-left: 45px;
+}
+
 .edit-link {
   font-size: 0.8em;
   color: #305bf1;
@@ -548,4 +590,16 @@ hr {
   height: 100px;
   margin: auto;
   overflow: hidden;
+}
+
+/*ABOUT PAGE*/
+#about-us {
+  display: flex;
+  flex-direction: row;
+}
+
+#story-left,
+#story-right {
+  width: 50vh;
+  
 }
