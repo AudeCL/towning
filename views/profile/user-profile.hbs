@@ -9,6 +9,9 @@
                 <button id="profile-btn-hote">MY HOTE EXPERIENCE</button>
             </div>
 
+            <div id="search-picture">
+                <img class="searchpicture" width="100px" src="/images/towning-pictures/binoculars.png" alt="Search icon"/>
+            </div>
             <div id="search-button">
                 <a href="/">Start a search now!</a>
             </div>
@@ -16,7 +19,7 @@
 
         <article id="profile-content" style="display: block">
             <div class="profile-content-picture">
-                <img class="userpicture" width="150px" src="{{user.userPicture}}" alt="Profile picture"/>
+                <img class="userpic" width="150px" src="{{user.userPicture}}" alt="Profile picture"/>
             </div>
             <div class="profile-content-username">
                 {{user.userName}}
@@ -55,17 +58,16 @@
                 4 reviews
             </div>
             <div class="profile-experience-traveller-cards">
-                {{#if travellerExperience}}
                 <ul>
+                    {{#each travellerExperience}}
                     <li>
-                        Location {{experience.experienceLocation}}
-                        Location {{travellerExperience.experienceLocation}}
+                        Location {{this.experienceLocation}}
                         <img class="experience-picture" width="150px" src="/images/towning-pictures/ExperienceCartoon.jpg" alt="Experience image"/>
                     </li>
+                    {{else}} 
+                        <li>No experience yet!</li>
+                    {{/each}} 
                 </ul>
-                {{else}}
-                <p>No experience yet!</p>
-                {{/if}}
             </div>
         </article>
 
@@ -89,16 +91,16 @@
                 2 reviews
             </div>
             <div class="profile-experience-hote-cards">
-                {{#if hoteExperience}} <!--if user est hote d'une experience(experience.user_id), alors afficher carte avec nom expérience-->
                 <ul>
+                    {{#each hoteExperience}}
                     <li>
-                        Location {{experience.experienceLocation}}
+                        {{this.experienceLocation}}
                         <img class="experience-picture" width="150px" src="/images/towning-pictures/ExperienceCartoon.jpg" alt="Experience image"/>
                     </li>
+                    {{else}} 
+                        <li>No experience yet!</li>
+                    {{/each}} 
                 </ul>
-                {{else}}
-                <p>No experience yet!</p>
-                {{/if}}
             </div>
         </article>
 
