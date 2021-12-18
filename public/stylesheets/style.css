@@ -32,7 +32,7 @@ h1 {
   border-bottom: 2px solid var(--yellow);
   width: 90%;
   margin: 5px 0px;
-  color: lightgray;
+  color: darkgray;
   font-size: 0.8rem;
   padding: 5px;
 }
@@ -276,7 +276,7 @@ hr {
 /*USER EDIT PROFILE STYLING*/
 #userprofile-edit-page {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   height: 80vh;
   margin: 0;
 }
@@ -286,22 +286,57 @@ hr {
   margin-left: 28px;
 }
 
-#userprofile-edit-page > h1 {
-  font-size: 50px;
+#about1 {
+  display:flex;
+  flex-direction: row;
+  margin-left: 300px;
 }
 
-#about1, #about2 {
-  flex-direction: row;
+#aboutyou-left {
+  display: flex;
+  flex-direction: column;
+  width: 30vh;
+  margin-right: 100px;
+}
+
+#aboutyou-left > h3 {
+  font-size: 1.1rem;
+  color:#00A482;
+  padding-left: 80px;
 }
 
 #aboutyou-right {
-  width: 75%;
+  width: 70vh;
+  display: flex;
+  flex-direction: column;
+  margin: 2%;
+  margin-left: 50px;
+}
+
+.userpicture {
+  border-radius:50%;
+  width:160px;
+  height:160px;
+  background-color: white;
+  border:1px solid black;
+  box-shadow: 9px 5px 5px grey;
+  margin-top: 65px;
+  position:relative;
+  bottom: 20px;
+}
+
+#aboutyou-left > label {
+  margin-left: 80px;
+  margin-top: 30px;
+}
+
+#aboutyou-right > form {
   display: flex;
   flex-direction: column;
 }
 
-#aboutyou-right > form {
-  flex-direction: column;
+#aboutyou-right > form > label {
+  margin-top: 20px;
 }
 
 /*USER PROFILE STYLING*/
@@ -320,7 +355,7 @@ hr {
 
 #profile-menu {
   margin-top: 123px;
-  margin-left: 25vh;
+  margin-left: 20vh;
 }
 
 .profile-buttons {
@@ -329,6 +364,12 @@ hr {
   height: 20vh;
   width: 25vh;
   margin-right: 20px;
+}
+
+.searchpicture {
+  position: relative;
+  top: 120px;
+  left: 65px;
 }
 
 #search-button {
@@ -351,7 +392,7 @@ hr {
   border: 1px solid black;
   border-radius: 8px;
   margin-top: 123px;
-  margin-left: 40px;
+  margin-left: 100px;
 }
 
 .edit-link {
@@ -384,12 +425,17 @@ hr {
   float: left;
 }
 
+.userpic {
+  padding-left: 5px;
+}
+
 .profile-content-username{
   font-size: 2em;
   font-weight: bold;
   display: inline-block;
   margin-left: 60px;
   margin-top: 95px;
+  width: 400px;
 }
 
 .profile-content-location {
@@ -398,6 +444,7 @@ hr {
   display: inline-block;
   margin-left: 60px;
   margin-top: 10px;
+  width: 400px;
 }
 
 .profile-content-age,
@@ -408,6 +455,7 @@ hr {
   display: inline-block;
   margin-left: 60px;
   margin-top: 10px;
+  width: 400px;
 }
 
 .profile-content-description {
@@ -421,6 +469,7 @@ hr {
   align-content: center;
   text-align: center;
   font-size: 1.2em;
+  line-height: 1.3em;
 }
 
 .fa-star.checked {

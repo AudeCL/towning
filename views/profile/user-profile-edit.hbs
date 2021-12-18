@@ -2,40 +2,39 @@
     <section id="userprofile-edit-page">
         <h3 id="hp-logo"><a href="/">towning</a></h3>
 
-        <h1>Tell us more...</h1>
-
-        <article id="About1">
+        <article id="about1">
 
             <div id="aboutyou-left">
+                <h2>Tell us more...</h2>
                 <h3>&gt; About you</h3>
-            </div>
 
-            <div id="aboutyou-right">
-                <form action="/user-profile/edit/{{user.id}}" method="POST">
-                    <label for="userpicture">
-                        Picture
+                <label for="userpicture">
                         <img class="userpicture" width="150px" src="{{user.userPicture}}" alt="Profile picture"/>
-                        <input type="file" name="profileimg" accept="image/png, image/jpeg">
+                        <input type="file" name="profileimg" accept="image/png, image/jpeg" form="contact">
                     </label>
-
+            </div>
+            
+            <div id="aboutyou-right">
+                <form id="contact" action="/user-profile/edit/{{user.id}}" method="POST">
+                    
                     <label for="username">
                         Full Name
-                        <input type="text" value="{{user.userName}}" name="username">
+                        <input type="text" value="{{user.userName}}" name="username" class="form-input">
                     </label>
 
                     <label for="useremail">
                         Email
-                        <input type="text" value="{{user.userEmail}}" name="useremail">
+                        <input type="text" value="{{user.userEmail}}" name="useremail" class="form-input">
                     </label>
 
                     <label for="userpwd">
                         Password
-                        <input type="password" value="{{user.passwordHash}}" name="userpwd">
+                        <input type="password" value="{{user.passwordHash}}" name="userpwd" class="form-input">
                     </label>
 
                     <label>
                         Age
-                        <select id="age-select" name="agegroup">
+                        <select id="age-select" name="agegroup" class="form-input">
                             <option value="" selected="selected" hidden="hidden">Choose your age group</option>
                             <option value="18-25yo">18-25 y.o.</option>
                             <option value="26-35yo">26-35 y.o.</option>
@@ -49,7 +48,7 @@
 
                     <label>
                         Location
-                        <select id="location-select" name="location">
+                        <select id="location-select" name="location" class="form-input">
                             <option value="" selected="selected" hidden="hidden">Choose your country and city</option>
                             <optgroup label="france">
                                 <option value="Ajaccio / FRANCE">Ajaccio</option>
@@ -100,10 +99,10 @@
 
                     <label for="userdescription">
                         Describe yourself
-                        <textarea placeholder="Hello, I am..." name="userdescription">{{user.userDesc}}</textarea> 
+                        <textarea placeholder="Hello, I am..." name="userdescription" class="form-input">{{user.userDesc}}</textarea> 
                     </label>
 
-                    <button>Save</button>
+                    <button class="form-btn">Save</button>
                 </form>
             </div>
 
