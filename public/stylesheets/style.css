@@ -369,7 +369,7 @@ hr {
 .searchpicture {
   position: relative;
   top: 120px;
-  left: 65px;
+  left: 67px;
 }
 
 #search-button {
@@ -378,8 +378,9 @@ hr {
 
 #search-button > a {
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: bold;
+  padding-left: 10px;
 }
 
 #profile-content,
@@ -439,7 +440,7 @@ hr {
 }
 
 .profile-content-location {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
   display: inline-block;
   margin-left: 60px;
@@ -450,7 +451,7 @@ hr {
 .profile-content-age,
 .profile-experience-traveller-reviews,
 .profile-experience-hote-reviews {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bold;
   display: inline-block;
   margin-left: 60px;
