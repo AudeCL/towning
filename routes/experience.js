@@ -36,7 +36,9 @@ router.get("/search-experience", (req, res, next) => {
   console.log('query=', query)
 
   Experience.find(query)
-  .then(function (experiencesFromDB) {
+    .populate('experienceOwner')
+    .then(function (experiencesFromDB) {
+
     console.log('experiencesFromDB', experiencesFromDB),
     res.render("experience/experience-results", {
       experiences : experiencesFromDB
@@ -50,10 +52,16 @@ router.get("/search-experience", (req, res, next) => {
 
 /* GET Submit New Experience FORM page */
 router.get("/new-experience/create", (req, res, next) => {
+  // protege ta route
+  if (!req.session.currentUser) return res.redirect('/login')
+
     res.render("experience/experience-new");
   });
 
 router.post("/new-experience/create", fileUploader.single('newxpimg'), (req, res, next) => {
+  // registered
+  if (!req.session.currentUser) return next(new Error('Please login'))
+
   console.log('CHECK ON OUTPUTS',req.body, req.file, req.session)  
   //ENRICH WITH USER OWNER ID 
     const experienceOwner = req.session.currentUser._id;
@@ -61,7 +69,8 @@ router.post("/new-experience/create", fileUploader.single('newxpimg'), (req, res
     const experienceDateTime = new Date(`${req.body.newxpdate}T${req.body.newxptime}`);
     const experienceLocation = req.body.newxpcountrycity;
     const experienceDesc = req.body.newxpdesc;
-    const experienceImg = req.file.path;
+    const experienceImg = req.file && req.file.path; // guard operator
+    //const experienceImg = req.file?.path; // optional chaining
 
 
     if (!experienceType) {
@@ -83,11 +92,12 @@ router.post("/new-experience/create", fileUploader.single('newxpimg'), (req, res
         .render("experience/experience-new", { errorMessage: "Please select a location from the drop down list."});
     }
     
+    console.log('test', experienceOwner)
     Experience.create({
       experienceOwner, experienceType, experienceDateTime, experienceLocation, experienceDesc, experienceImg
     })
       .then(function (createdExperience) {
-        res.redirect("/"); // REVOIR OU ON FAIT LE REDIRECT A LA SOUMISSION DU FORM
+        res.redirect("/user-profile/:id");
       })
       .catch((err) => {
         console.log(err);

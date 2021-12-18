@@ -32,7 +32,7 @@ h1 {
   border-bottom: 2px solid var(--yellow);
   width: 90%;
   margin: 5px 0px;
-  color: lightgray;
+  color: var(--lightbrown);
   font-size: 0.8rem;
   padding: 5px;
 }
@@ -420,4 +420,61 @@ hr {
 
 .fa-star.checked {
   color:yellow;
+}
+
+/* EXPERIENCE RESULTS STYLING */
+
+#experience-results-header {
+  background: var(--yellow);
+  height: 100px;
+  padding: 0px 10px;
+}
+
+#experience-results-header > h1 > a {
+  text-decoration: none;
+  font-size: 2.5rem;
+}
+
+#experience-results-nbr {
+  padding: 0px 10px;
+}
+
+#experience-results {
+  padding: 0px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#experience-card {
+  background: #EADEDA;
+  width: calc(100vw / 3 - 15px);
+  display: flex;
+  flex-direction: column;
+}
+
+#experience-card > p {
+  padding: 0px 10px;
+}
+
+#experience-card > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--darkgreen);
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  width: 175px;
+  height: 35px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+#experience-card > img {
+  display: block;
+  height: 100px;
+  margin: auto;
+  overflow: hidden;
 }
