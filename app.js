@@ -42,4 +42,10 @@ app.use("/", aboutRoutes);
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
+// ❗ Set user data after login in local session
+app.use(function (req, res, next) {
+    res.locals.session = req.session;
+    next();
+    });
+
 module.exports = app;
