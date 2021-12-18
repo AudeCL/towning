@@ -125,6 +125,22 @@ h1 {
 
 }
 
+#homepage-search-city {
+  background: white;
+  margin-top: 50px;
+}
+
+#homepage-search-city-img {
+  background: white;
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#homepage-search-city > img {
+  width: calc(100);
+}
+
 /* FOOTER STYLING */
 hr {
   border: 2px solid var(--yellow);

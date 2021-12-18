@@ -13,6 +13,7 @@ let profileContent = document.getElementById("profile-content");
 let profileExperienceTraveller = document.getElementById("profile-experience-traveller");
 let profileExperienceHote = document.getElementById("profile-experience-hote");
 
+
 profileButtonProfile.addEventListener("click", () => {
   if(profileContent.style.display != "none") {
     profileContent.style.display = "none";
@@ -40,3 +41,6 @@ profileButtonHote.addEventListener("click", () => {
     profileExperienceTraveller.style.display = "none";
   }
 })
+
+
+  

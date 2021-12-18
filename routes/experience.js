@@ -50,6 +50,17 @@ router.get("/search-experience", (req, res, next) => {
   });
 });
 
+router.get("/experiences/:id/register", (req, res, next) => {
+  if (!req.session.currentUser) return res.redirect('/login')
+  const participant = req.session.currentUser._id
+
+  Experience.findById(req.params.id)
+
+  
+  .res.render()
+
+})
+
 /* GET Submit New Experience FORM page */
 router.get("/new-experience/create", (req, res, next) => {
   // protege ta route

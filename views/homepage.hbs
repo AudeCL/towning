@@ -1,8 +1,12 @@
 <body>
     <section id="homepage">
         <div id="homepage-header">
+            {{#if user }} 
+            <a href="/user-profile/{{user._id}}">My Profile</a>
+            {{else}}
             <a href="/signup">Sign Up</a>
             <a href="/login">Log In</a>
+            {{/if}}
         </div>
         <div id="homepage-titles">
             <h1>towning</h1>
@@ -104,7 +108,13 @@
         </div>
         <div id="homepage-search-city">
             <h2>Where is your next stop?</h2>
-            <div>
+            <div id="homepage-search-city-img">
+                <img src="/public/images/towning-pictures/Berlin.jpg" alt="See Experiences in Berlin">
+                <img src="/public/images/towning-pictures/Istanbul.jpg" alt="See Experiences in Istanbul">
+                <img src="/public/images/towning-pictures/Lisbon.jpg" alt="See Experiences in Lisbon">
+                <img src="/public/images/towning-pictures/Lisbon.jpg" alt="See Experiences in London">
+                <img src="/public/images/towning-pictures/Belgrade.jpg" alt="See Experiences in Belgrade">
+                <img src="/public/images/towning-pictures/Copenhagen.jpg" alt="See Experiences in Copenhagen">
                 <a href="">View more destinations</a>
             </div>
         </div>
