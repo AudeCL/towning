@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const mongoose = require("mongoose");
 const fileUploader = require('../config/cloudinary.config');
+const queryString = require('query-string');
+
 
 
 // Require the Experience model in order to interact with the database
@@ -8,12 +10,12 @@ const Experience = require("../models/Experience.model");
 
 /* GET Search Results (Experiences) page */
 router.get("/search-experience", (req, res, next) => {
-  console.log('Message', req.query)
+  // req.query {} => ads=truc&bill=chcd
+
 
   //
   // search engine
   //
-
   const query = {}
   if (req.query.xpcategory) {
     query.experienceType = req.query.xpcategory
@@ -38,12 +40,14 @@ router.get("/search-experience", (req, res, next) => {
   Experience.find(query)
     .populate('experienceOwner')
     .then(function (experiencesFromDB) {
+      const qs = queryString.stringify(req.query)
+      console.log('experiencesFromDB', experiencesFromDB, qs)
 
-    console.log('experiencesFromDB', experiencesFromDB),
-    res.render("experience/experience-results", {
-      experiences : experiencesFromDB
-    });
-  })
+      res.render("experience/experience-results", {
+        experiences : experiencesFromDB,
+        qs: qs
+      });
+    })
   .catch(function (err) {
     console.log(err);
     next(err); 
@@ -51,15 +55,33 @@ router.get("/search-experience", (req, res, next) => {
 });
 
 router.get("/experiences/:id/register", (req, res, next) => {
+
   if (!req.session.currentUser) return res.redirect('/login')
-  const participant = req.session.currentUser._id
 
-  Experience.findById(req.params.id)
-
-  
-  .res.render()
-
-})
+  // Experience.findById('')
+  //   .then(xp => {
+  //     xp.participants.push()
+  //     xp.save()
+  //       .then(() => {
+  //         res.re
+  //       })
+  //       .catch()
+  //   })
+    
+  Experience.findByIdAndUpdate(
+    req.params.id, 
+    {
+      participants : req.session.currentUser._id
+    })
+  .then(function (foundExperience) {
+    console.log('ExperienceID is', req.params.id, 'and UserID is', req.session)
+    res.redirect(`/search-experience?${queryString.stringify(req.query)}`)
+  })
+  .catch((err) => {
+    console.log(err);
+    next(err); 
+  });
+});
 
 /* GET Submit New Experience FORM page */
 router.get("/new-experience/create", (req, res, next) => {
@@ -73,8 +95,8 @@ router.post("/new-experience/create", fileUploader.single('newxpimg'), (req, res
   // registered
   if (!req.session.currentUser) return next(new Error('Please login'))
 
-  console.log('CHECK ON OUTPUTS',req.body, req.file, req.session)  
-  //ENRICH WITH USER OWNER ID 
+  //console.log('CHECK ON OUTPUTS',req.body, req.file, req.session)  
+    
     const experienceOwner = req.session.currentUser._id;
     const experienceType = req.body.newxpcategory;
     const experienceDateTime = new Date(`${req.body.newxpdate}T${req.body.newxptime}`);
@@ -90,20 +112,12 @@ router.post("/new-experience/create", fileUploader.single('newxpimg'), (req, res
         .render("experience/experience-new", { errorMessage: "Please select an experience type." });
     }
 
-    /*if (experienceDateTime < now) {
-      return res
-        .status(400)
-        .render("experience/experience-new", { errorMessage: "Please select valid date and time." });
-    }*/
-    //ADD ERROR WHEN NO DATE / TIME SELECTED BY USER
-
     if (!experienceLocation) {
       return res
         .status(400)
         .render("experience/experience-new", { errorMessage: "Please select a location from the drop down list."});
     }
     
-    console.log('test', experienceOwner)
     Experience.create({
       experienceOwner, experienceType, experienceDateTime, experienceLocation, experienceDesc, experienceImg
     })

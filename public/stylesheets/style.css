@@ -49,9 +49,10 @@ h1 {
 
 /* HOMEPAGE STYLING */
 #homepage {
-  height: 100vh;
   background: var(--yellow);
   padding-top: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 #homepage-header {
@@ -82,7 +83,8 @@ h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: auto;
+  justify-content: center;
+  height: calc(100vh / 1.5)
 }
 
 #homepage-search {
@@ -137,8 +139,9 @@ h1 {
   flex-wrap: wrap;
 }
 
-#homepage-search-city > img {
-  width: calc(100);
+#homepage-search-city-img > img {
+  width: calc(100vw / 3); 
+  height: auto;
 }
 
 /* FOOTER STYLING */

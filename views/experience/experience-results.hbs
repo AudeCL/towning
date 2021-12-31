@@ -4,19 +4,24 @@
 
     </div>
     <div id="experience-results-nbr">
-        {{! -- CHECK ON HOW TO COUNT experiences.length TO GET NBR RESULTS MATCHING SEARCH CRITERIA}}    
+        {{! -- CHECK ON HOW TO COUNT experiences.length TO GET NBR RESULTS MATCHING SEARCH CRITERIA}}  
+        {{#if successMessage}}
+                <p>Coucou</p>
+                {{/if}}
+        
         <h3>{{experiences.length}} experience(s) match(es) your search criteria</h3>
     </div>
     <div id="experience-results">
         
         {{#each experiences}}
+        
         <div id="experience-card">
             <img src="{{this.experienceImg}}" alt="Image picked by Host to illustrate his experience">
             <p>Your Host: {{this.experienceOwner.userName}}</p>
             <p>Experience Type: {{this.experienceType}}</p>
             <p>Date and Time: {{this.experienceDateTime}}</p>
             <p>Description: {{this.experienceDesc}}</p>
-            <a class="experience-results-register" href="/experiences/{{this._id}}/register">Register</a>
+            <a class="experience-results-register" href="/experiences/{{this._id}}/register?{{../qs}}">Register</a>
         </div>
         {{/each}}
     </div>
