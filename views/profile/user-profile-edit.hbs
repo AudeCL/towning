@@ -7,16 +7,15 @@
             <div id="aboutyou-left">
                 <h2>Tell us more...</h2>
                 <h3>&gt; About you</h3>
-
-                <label for="userpicture">
-                        <img class="userpicture" width="150px" src="{{user.userPicture}}" alt="Profile picture"/>
-                        <input type="file" name="profileimg" accept="image/png, image/jpeg" form="contact">
-                    </label>
             </div>
             
             <div id="aboutyou-right">
-                <form id="contact" action="/user-profile/edit/{{user.id}}" method="POST">
-                    
+                <form id="contact" action="/user-profile/edit/{{user.id}}" method="POST" enctype="multipart/form-data">
+                    <label for="userpicture">
+                        <img class="userpicture" width="150px" src="{{user.userPicture}}" alt="Profile picture"/>
+                        <input type="file" name="profileimg" accept="image/png, image/jpeg" id="imginput">
+                    </label>
+
                     <label for="username">
                         Full Name
                         <input type="text" value="{{user.userName}}" name="username" class="form-input">

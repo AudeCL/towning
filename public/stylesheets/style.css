@@ -296,7 +296,7 @@ hr {
 #userprofile-edit-page {
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: 90vh;
   margin: 0;
 }
 
@@ -308,14 +308,13 @@ hr {
 #about1 {
   display:flex;
   flex-direction: row;
-  margin-left: 300px;
+  margin-left: 250px;
 }
 
 #aboutyou-left {
   display: flex;
   flex-direction: column;
-  width: 30vh;
-  margin-right: 100px;
+  width: 22%;
 }
 
 #aboutyou-left > h3 {
@@ -325,11 +324,10 @@ hr {
 }
 
 #aboutyou-right {
-  width: 70vh;
+  width: 56%;
   display: flex;
   flex-direction: column;
   margin: 2%;
-  margin-left: 50px;
 }
 
 .userpicture {
@@ -339,14 +337,10 @@ hr {
   background-color: white;
   border:1px solid black;
   box-shadow: 9px 5px 5px grey;
-  margin-top: 65px;
   position:relative;
   bottom: 20px;
-}
-
-#aboutyou-left > label {
-  margin-left: 80px;
-  margin-top: 30px;
+  float: right;
+  margin-right: 10%;
 }
 
 #aboutyou-right > form {
@@ -354,9 +348,22 @@ hr {
   flex-direction: column;
 }
 
-#aboutyou-right > form > label {
-  margin-top: 20px;
+#contact > .form-btn {
+  margin-top: 40px;
+  margin-left: 35%;
+} 
+
+#imginput {
+  position: absolute;
+  margin-left: 27%;
+  margin-top: 7%;
 }
+
+#aboutyou-right > form > label {
+  margin-top: 19px;
+}
+
+
 
 /*USER PROFILE STYLING*/
 #user-profile {
@@ -374,21 +381,21 @@ hr {
 
 #profile-menu {
   margin-top: 123px;
-  margin-left: 20vh;
+  margin-left: 170px;
 }
 
 .profile-buttons {
   display: flex;
   flex-direction: column;
-  height: 20vh;
-  width: 25vh;
+  height: 32%;
+  width: 100%;
   margin-right: 20px;
 }
 
 .searchpicture {
   position: relative;
   top: 120px;
-  left: 65px;
+  left: 67px;
 }
 
 #search-button {
@@ -397,16 +404,17 @@ hr {
 
 #search-button > a {
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1.4em;
   font-weight: bold;
+  padding-left: 10px;
 }
 
 #profile-content,
 #profile-experience-traveller,
 #profile-experience-hote {
   display: flex;
-  width: 80vh;
-  height: 60vh;
+  width: 46%;
+  height: 70%;
   background-color: #C4C4C4;
   border: 1px solid black;
   border-radius: 8px;
@@ -414,16 +422,58 @@ hr {
   margin-left: 100px;
 }
 
+.profile-experience-traveller-cards,
+.profile-experience-hote-cards {
+  display: flex;
+  flex-direction: column;
+  width: 585px;
+  height: 300px;
+  margin-top: 15px;
+  margin-left: 60px;
+}
+
+.profile-experience-traveller-cards > ul,
+.profile-experience-hote-cards > ul {
+  width: 160px;
+  height: 180px;
+  list-style: none;
+}
+
+.profile-experience-traveller-cards > ul > li,
+.profile-experience-hote-cards > ul > li {
+  width: 160px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 0.9em;
+}
+
+.experience-picture {
+  border-radius: 8px;
+  position: relative;
+}
+
+.txt-img {
+  position: absolute;
+  z-index: 1;
+  margin-top: 100px;
+  margin-left: 10px;
+}
+
+.profile-experience-hote-cards > ul > li > form > button {
+  margin-left: 45px;
+}
+
 .edit-link {
   font-size: 0.8em;
   color: #305bf1;
-  margin-left: 550px;
+  margin-left: 76%;
 }
 
 #profile-btn-profile,
 #profile-btn-traveller,
 #profile-btn-hote {
-  height: 7vh;
+  height: 5em;
   font-family: 'Montserrat Alternates', sans-serif;
   font-size: 0.95em;
   font-weight: bold;
@@ -433,6 +483,11 @@ hr {
 }
 
 .profile-content-picture {
+  
+  float: left;
+}
+
+.userpic {
   border-radius:50%;
   width:160px;
   height:160px;
@@ -441,11 +496,7 @@ hr {
   box-shadow: 9px 5px 5px grey;
   margin-top: 65px;
   margin-left: 95px;
-  float: left;
-}
-
-.userpic {
-  padding-left: 5px;
+  
 }
 
 .profile-content-username{
@@ -458,7 +509,7 @@ hr {
 }
 
 .profile-content-location {
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: bold;
   display: inline-block;
   margin-left: 60px;
@@ -469,7 +520,7 @@ hr {
 .profile-content-age,
 .profile-experience-traveller-reviews,
 .profile-experience-hote-reviews {
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: bold;
   display: inline-block;
   margin-left: 60px;
@@ -478,17 +529,21 @@ hr {
 }
 
 .profile-content-description {
-  height: 20vh;
-  width: 60vh;
+  height: 10em;
+  width: 68%;
   background-color: #e4dcdc;
   border-radius: 8px;
   margin: auto;
   margin-top: 80px;
   margin-bottom: 10px;
-  align-content: center;
   text-align: center;
   font-size: 1.2em;
   line-height: 1.3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .fa-star.checked {
@@ -550,4 +605,16 @@ hr {
   height: 100px;
   margin: auto;
   overflow: hidden;
+}
+
+/*ABOUT PAGE*/
+#about-us {
+  display: flex;
+  flex-direction: row;
+}
+
+#story-left,
+#story-right {
+  width: 50vh;
+  
 }

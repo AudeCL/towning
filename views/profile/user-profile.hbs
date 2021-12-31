@@ -4,13 +4,15 @@
 
         <article id="profile-menu">
             <div class="profile-buttons">
-                <button id="profile-btn-profile">PROFILE</button>
-                <button id="profile-btn-traveller">MY TRAVELLER EXPERIENCE</button>
-                <button id="profile-btn-hote">MY HOTE EXPERIENCE</button>
+                <button id="profile-btn-profile">Profile</button>
+                <button id="profile-btn-traveller">My Traveller Experience</button>
+                <button id="profile-btn-hote">My Hote Experience</button>
             </div>
 
             <div id="search-picture">
+                <a href="/">
                 <img class="searchpicture" width="100px" src="/images/towning-pictures/binoculars.png" alt="Search icon"/>
+                </a>
             </div>
             <div id="search-button">
                 <a href="/">Start a search now!</a>
@@ -40,7 +42,7 @@
 
         <article id="profile-experience-traveller" style="display: none">
             <div class="profile-content-picture">
-                <img class="userpicture" width="150px" src="{{user.userPicture}}" alt="Profile picture"/>
+                <img class="userpic" width="150px" src="{{user.userPicture}}" alt="Profile picture"/>
             </div>
             <div class="profile-content-username">
                 {{user.userName}}
@@ -61,8 +63,9 @@
                 <ul>
                     {{#each travellerExperience}}
                     <li>
-                        Location {{this.experienceLocation}}
                         <img class="experience-picture" width="150px" src="/images/towning-pictures/ExperienceCartoon.jpg" alt="Experience image"/>
+                        <div class="txt-img1">{{this.experienceLocation}}</div>
+                        <div class="txt-img2"></div>{{this.experienceType}}</div>
                     </li>
                     {{else}} 
                         <li>No experience yet!</li>
@@ -73,7 +76,7 @@
 
         <article id="profile-experience-hote" style="display: none">
             <div class="profile-content-picture">
-                <img class="userpicture" width="150px" src="{{user.userPicture}}" alt="Profile picture"/>
+                <img class="userpic" width="150px" src="{{user.userPicture}}" alt="Profile picture"/>
             </div>
             <div class="profile-content-username">
                 {{user.userName}}
@@ -94,8 +97,12 @@
                 <ul>
                     {{#each hoteExperience}}
                     <li>
-                        {{this.experienceLocation}}
                         <img class="experience-picture" width="150px" src="/images/towning-pictures/ExperienceCartoon.jpg" alt="Experience image"/>
+                        <div class="txt-img1">{{this.experienceType}}</div>
+                        <!--<div class="txt-img2">{{this.experienceDateTime}}</div>-->
+                        <form action="/new-experience/{{_id}}/delete" method="POST">
+                            <button>Delete</button>
+                        </form>
                     </li>
                     {{else}} 
                         <li>No experience yet!</li>
