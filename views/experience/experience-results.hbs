@@ -1,8 +1,16 @@
 <section id="experience-results-page">
     <div id="experience-results-header">
         <h1><a href="/">towning</a></h1>
-
+        <div id="homepage-header">
+            {{#if user }} 
+            <a href="/user-profile/{{user._id}}">My Profile</a>
+            {{else}}
+            <a href="/signup">Sign Up</a>
+            <a href="/login">Log In</a>
+            {{/if}}
+        </div>
     </div>
+
     <div id="experience-results-nbr">
         {{! -- CHECK ON HOW TO COUNT experiences.length TO GET NBR RESULTS MATCHING SEARCH CRITERIA}}  
         {{#if successMessage}}

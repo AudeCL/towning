@@ -2,6 +2,7 @@ const router = require("express").Router();
 const mongoose = require("mongoose");
 const fileUploader = require('../config/cloudinary.config');
 const queryString = require('query-string');
+const dayjs = require('dayjs')
 
 
 
@@ -10,8 +11,6 @@ const Experience = require("../models/Experience.model");
 
 /* GET Search Results (Experiences) page */
 router.get("/search-experience", (req, res, next) => {
-  // req.query {} => ads=truc&bill=chcd
-
 
   //
   // search engine
@@ -44,6 +43,7 @@ router.get("/search-experience", (req, res, next) => {
       console.log('experiencesFromDB', experiencesFromDB, qs)
 
       res.render("experience/experience-results", {
+        user : req.session.currentUser,
         experiences : experiencesFromDB,
         qs: qs
       });
@@ -122,6 +122,7 @@ router.post("/new-experience/create", fileUploader.single('newxpimg'), (req, res
       experienceOwner, experienceType, experienceDateTime, experienceLocation, experienceDesc, experienceImg
     })
       .then(function (createdExperience) {
+        console.log(dayjs(experienceDateTime).format('LLLL'))
         res.redirect("/user-profile/:id");
       })
       .catch((err) => {
