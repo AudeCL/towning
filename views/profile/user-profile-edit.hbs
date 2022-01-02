@@ -34,8 +34,8 @@
                     <label>
                         Age
                         <select id="age-select" name="agegroup" class="form-input">
-                            <option value="" selected="selected" hidden="hidden">Choose your age group</option>
-                            <option value="18-25yo" {{#eq user.}} selected{{/if}}>18-25 y.o.</option>
+                            <option value="" hidden="hidden">Choose your age group</option>
+                            <option value="18-25yo">18-25 y.o.</option>
                             <option value="26-35yo">26-35 y.o.</option>
                             <option value="36-45yo">36-45 y.o.</option>
                             <option value="46-55yo">46-55 y.o.</option>
@@ -43,6 +43,7 @@
                             <option value="More than 65yo">More than 65 y.o.</option>
                         </select>
                         <!--<input type="text" value="{{user.userAge}}" placeholder="Choose your age group" name="agegroup">-->
+                        <!--{{#eq user.userAge}} selected{{/if}}-->
                     </label>
 
                     <label>

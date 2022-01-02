@@ -453,11 +453,12 @@ hr {
   position: relative;
 }
 
-.txt-img {
+.txt-img1 {
   position: absolute;
   z-index: 1;
   margin-top: 100px;
   margin-left: 10px;
+  text-align: center;
 }
 
 .profile-experience-hote-cards > ul > li > form > button {
@@ -609,12 +610,53 @@ hr {
 
 /*ABOUT PAGE*/
 #about-us {
+  height: 80vh;
+}
+
+#about-story{
+  margin-top: 3.5%;
+  margin-left: 10%;
   display: flex;
+}
+
+#about-main {
   flex-direction: row;
+  display: flex;
+  margin-left: 15%;
 }
 
 #story-left,
 #story-right {
-  width: 50vh;
-  
+  display:inline-flex;
+  width: 40%;
+  margin-top: 2%;
+}
+
+#story-left > img,
+#story-right > img {
+  height: auto%;
+}
+
+#long-story,
+#short-story {
+  width: 250px;
+  padding-left: 8px;
+  line-height: 1.4;
+}
+
+#short-story {
+  padding-right: 12px;
+}
+
+/*TERMS PAGE*/
+#terms-page {
+  height: 80vh
+}
+
+#terms-data {
+  text-align: justify;
+  line-height: 1.4;
+  margin-top: 3.5%;
+  margin-left: 20%;
+  margin-right: 20%;
 }
