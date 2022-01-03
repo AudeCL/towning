@@ -15,32 +15,19 @@ let profileExperienceHote = document.getElementById("profile-experience-hote");
 
 
 profileButtonProfile.addEventListener("click", () => {
-  if(profileContent.style.display != "none") {
-    profileContent.style.display = "none";
-  } else {
-    profileContent.style.display = "block";
-    profileExperienceTraveller.style.display = "none";
-    profileExperienceHote.style.display = "none";
-  }
+  profileContent.style.display = "block";
+  profileExperienceTraveller.style.display = "none";
+  profileExperienceHote.style.display = "none";
 })
 profileButtonTraveller.addEventListener("click", () => {
-  if(profileExperienceTraveller.style.display != "none") {
-    profileExperienceTraveller.style.display = "none";
-  } else {
-    profileExperienceTraveller.style.display = "block";
-    profileContent.style.display = "none";
-    profileExperienceHote.style.display = "none";
-  }
+  profileContent.style.display = "none";
+  profileExperienceTraveller.style.display = "block";
+  profileExperienceHote.style.display = "none";
 })
 profileButtonHote.addEventListener("click", () => {
-  if(profileExperienceHote.style.display != "none") {
-    profileExperienceHote.style.display = "none";
-  } else {
-    profileExperienceHote.style.display = "block";
-    profileContent.style.display = "none";
-    profileExperienceTraveller.style.display = "none";
-  }
+  profileContent.style.display = "none";
+  profileExperienceTraveller.style.display = "none";
+  profileExperienceHote.style.display = "block";
 })
-
 
   
