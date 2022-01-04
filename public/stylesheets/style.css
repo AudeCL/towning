@@ -726,3 +726,41 @@ hr {
   margin-left: 20%;
   margin-right: 20%;
 }
+
+/*CONTACT PAGE*/
+#contact-page {
+  height: 80vh
+}
+
+#contact-title,
+#contact-form,
+#contact-some {
+  margin-top: 3.5%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+#contact-form > p,
+#contact-some > p {
+  font-size: 1.1em;
+  font-weight:bold;
+  text-align: center;
+}
+
+#contact-some {
+  display: flex;
+  flex-direction: column;
+}
+
+#some-logos > img {
+  width: 28px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#some-logos {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
