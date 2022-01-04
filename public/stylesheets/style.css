@@ -481,6 +481,8 @@ hr {
   width: 160px;
   height: 180px;
   list-style: none;
+  display: flex;
+  margin-left: 0;
 }
 
 .profile-experience-traveller-cards > ul > li,
@@ -490,6 +492,7 @@ hr {
   flex-wrap: wrap;
   gap: 10px;
   font-size: 0.9em;
+  margin-right: 5px;
 }
 
 .experience-picture {
