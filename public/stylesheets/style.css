@@ -423,22 +423,38 @@ hr {
   margin-right: 20px;
 }
 
-.searchpicture {
-  position: relative;
-  top: 120px;
-  left: 67px;
-}
-
-#search-button {
-  margin-top: 120px;
-}
-
-#search-button > a {
+.profile-buttons-newxp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 50px;
   text-decoration: none;
-  font-size: 1.4em;
+  background: var(--darkbrown);
+  color: white;
+  font-size: 0.95em;
   font-weight: bold;
-  padding-left: 10px;
+  border: 1px solid black;
+  height: 50px;
+  border-radius: 8px;
 }
+
+.profile-buttons-searchxp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  text-decoration: none;
+  background: var(--darkbrown);
+  color: white;
+  font-size: 0.95em;
+  font-weight: bold;
+  border: 1px solid black;
+  height: 50px;
+  border-radius: 8px;
+}
+
 
 #profile-content,
 #profile-experience-traveller,
@@ -588,12 +604,34 @@ hr {
   background: var(--yellow);
   height: 100px;
   padding: 0px 10px;
+  display: flex;
 }
 
 #experience-results-header > h1 > a {
   text-decoration: none;
   font-size: 2.5rem;
 }
+
+#experience-results-header-btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin: auto;
+}
+
+#experience-results-header-btn > a {
+  text-decoration: none;
+  background: var(--darkbrown);
+  width: 80px;
+  padding: 5px 15px;
+  margin: 0 15px;
+  text-decoration: none;
+  border-radius: 8px;
+  color: white;
+  text-align: center;
+  font-size: 0.8rem;
+}
+
 
 #experience-results-nbr {
   padding: 0px 10px;
