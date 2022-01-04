@@ -130,19 +130,50 @@ h1 {
 #homepage-search-city {
   background: white;
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
 }
 
-#homepage-search-city-img {
-  background: white;
-  margin-top: 50px;
+#homepage-search-city > a {
+  display: flex;
+  background: var(--lightbrown);
+  text-decoration: none;
+  width: 30%;
+  height: 30px;
+  border-radius: 8px;
+  color: white;
+  margin: 20px auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#homepage-search-city-block {
   display: flex;
   flex-wrap: wrap;
 }
 
-#homepage-search-city-img > img {
-  width: calc(100vw / 3); 
-  height: auto;
+.homepage-searched-city {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
+
+.homepage-searched-city > img {
+  width: calc(100vw / 3.03);
+  border: white 2px solid;
+  height: 500px;
+}
+
+.homepage-searched-city > h4 {
+  position: absolute;
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 
 /* FOOTER STYLING */
 hr {
