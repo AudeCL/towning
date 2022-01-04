@@ -208,7 +208,7 @@ hr {
 #login-page {
   display: flex;
   flex-direction: row;
-  height: 80vh;
+  height: 90vh;
   margin: 0;
 }
 
@@ -248,7 +248,6 @@ hr {
 #signup-page {
   display: flex;
   flex-direction: row;
-  height: 80vh;
   margin: 0;
 }
 
@@ -288,7 +287,6 @@ hr {
 #newxp-submit {
   display: flex;
   flex-direction: row;
-  height: 80vh;
   margin: 0;
 }
 
@@ -302,7 +300,8 @@ hr {
 
 #newxp-left > img {
   width: 100%;
-  height: auto;
+  height: 90vh;
+  object-fit: cover;
 }
 
 #newxp-right {
@@ -327,7 +326,6 @@ hr {
 #userprofile-edit-page {
   display: flex;
   flex-direction: column;
-  height: 90vh;
   margin: 0;
 }
 
@@ -676,8 +674,9 @@ hr {
 }
 
 /*ABOUT PAGE*/
+
 #about-us {
-  height: 80vh;
+  height: 90vh;
 }
 
 #about-story{
@@ -717,7 +716,7 @@ hr {
 
 /*TERMS PAGE*/
 #terms-page {
-  height: 80vh
+  height: 90vh;
 }
 
 #terms-data {
@@ -730,7 +729,7 @@ hr {
 
 /*CONTACT PAGE*/
 #contact-page {
-  height: 80vh
+  height: 90vh
 }
 
 #contact-title,
