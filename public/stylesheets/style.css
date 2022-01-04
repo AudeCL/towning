@@ -402,7 +402,6 @@ hr {
   display: flex;
   flex-direction: row;
   height: 80vh;
-  margin: 0;
 }
 
 #hp-logo {
@@ -531,7 +530,6 @@ hr {
 }
 
 .profile-content-picture {
-  
   float: left;
 }
 
@@ -544,25 +542,25 @@ hr {
   box-shadow: 9px 5px 5px grey;
   margin-top: 65px;
   margin-left: 95px;
-  
+  margin-right: 5px;
 }
 
 .profile-content-username{
   font-size: 2em;
   font-weight: bold;
   display: inline-block;
-  margin-left: 60px;
+  margin-left: 20px;
   margin-top: 95px;
-  width: 400px;
+  width: 380px;
 }
 
 .profile-content-location {
   font-size: 1.3em;
   font-weight: bold;
   display: inline-block;
-  margin-left: 60px;
+  margin-left: 20px;
   margin-top: 10px;
-  width: 400px;
+  width: 380px;
 }
 
 .profile-content-age,
@@ -571,9 +569,9 @@ hr {
   font-size: 1.1em;
   font-weight: bold;
   display: inline-block;
-  margin-left: 60px;
+  margin-left: 20px;
   margin-top: 10px;
-  width: 400px;
+  width: 380px;
 }
 
 .profile-content-description {
@@ -582,7 +580,7 @@ hr {
   background-color: #e4dcdc;
   border-radius: 8px;
   margin: auto;
-  margin-top: 80px;
+  margin-top: 50px;
   margin-bottom: 10px;
   text-align: center;
   font-size: 1.2em;
