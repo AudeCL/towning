@@ -2,6 +2,7 @@ const User = require("../models/User.model");
 const Experience = require("../models/Experience.model");
 const fileUploader = require('../config/cloudinary.config');
 
+
 const router = require("express").Router();
 
 /* GET EDIT Profile page */
@@ -30,7 +31,7 @@ router.post("/user-profile/edit/:id", fileUploader.single('profileimg'), (req, r
     userAge: req.body.agegroup,
     userLocation: req.body.location,
     userDesc: req.body.userdescription,
-    userPicture: req.file.path
+    userPicture: req.file?.path
     }, {new: true})
       .then(function(updatedUser) {
         res.redirect(`/user-profile/${updatedUser.id}`)

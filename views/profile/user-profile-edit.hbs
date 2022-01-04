@@ -34,64 +34,63 @@
                     <label>
                         Age
                         <select id="age-select" name="agegroup" class="form-input">
-                            <option value="" selected="selected" hidden="hidden">Choose your age group</option>
-                            <option value="18-25yo" {{#eq user.}} selected{{/if}}>18-25 y.o.</option>
-                            <option value="26-35yo">26-35 y.o.</option>
-                            <option value="36-45yo">36-45 y.o.</option>
-                            <option value="46-55yo">46-55 y.o.</option>
-                            <option value="56-65yo">56-65 y.o.</option>
-                            <option value="More than 65yo">More than 65 y.o.</option>
+                            <option value="" hidden="hidden">Choose your age group</option>
+                            <option value="18-25yo" {{#if (eq user.userAge "18-25yo")}} selected="selected" {{/if}}>18-25 y.o.</option>
+                            <option value="26-35yo" {{#if (eq user.userAge "26-35yo")}} selected="selected" {{/if}}>26-35 y.o.</option>
+                            <option value="36-45yo" {{#if (eq user.userAge "36-45yo")}} selected="selected" {{/if}}>36-45 y.o.</option>
+                            <option value="46-55yo" {{#if (eq user.userAge "46-55yo")}} selected="selected" {{/if}}>46-55 y.o.</option>
+                            <option value="56-65yo" {{#if (eq user.userAge "56-65yo")}} selected="selected" {{/if}}>56-65 y.o.</option>
+                            <option value="More than 65yo" {{#if (eq user.userAge "More than 65yo")}} selected="selected" {{/if}}>More than 65 y.o.</option>
                         </select>
-                        <!--<input type="text" value="{{user.userAge}}" placeholder="Choose your age group" name="agegroup">-->
                     </label>
 
                     <label>
                         Location
                         <select id="location-select" name="location" class="form-input">
-                            <option value="" selected="selected" hidden="hidden">Choose your country and city</option>
+                            <option value="" hidden="hidden">Choose your country and city</option>
                             <optgroup label="france">
-                                <option value="Ajaccio / FRANCE">Ajaccio</option>
-                                <option value="Bordeaux / FRANCE">Bordeaux</option>
-                                <option value="Chambéry / FRANCE">Chambéry</option>
-                                <option value="Grenoble / FRANCE">Grenoble</option>
-                                <option value="La Rochelle / FRANCE">La Rochelle</option>
-                                <option value="Lyon / FRANCE">Lyon</option>
-                                <option value="Marseille / FRANCE">Marseille</option>
-                                <option value="Nantes / FRANCE">Nantes</option>
-                                <option value="Nice / FRANCE">Nice</option>
-                                <option value="Paris / FRANCE">Paris</option>
-                                <option value="Reims / FRANCE">Reims</option>
-                                <option value="Strasbourg / FRANCE">Strasbourg</option>
-                                <option value="Toulouse / FRANCE">Toulouse</option>
+                                <option value="Ajaccio / FRANCE" {{#if (eq user.userLocation "Ajaccio / FRANCE")}} selected="selected" {{/if}}>Ajaccio</option>
+                                <option value="Bordeaux / FRANCE" {{#if (eq user.userLocation "Bordeaux / FRANCE")}} selected="selected" {{/if}}>Bordeaux</option>
+                                <option value="Chambéry / FRANCE" {{#if (eq user.userLocation "Chambéry / FRANCE")}} selected="selected" {{/if}}>Chambéry</option>
+                                <option value="Grenoble / FRANCE" {{#if (eq user.userLocation "Grenoble / FRANCE")}} selected="selected" {{/if}}>Grenoble</option>
+                                <option value="La Rochelle / FRANCE" {{#if (eq user.userLocation "La Rochelle / FRANCE")}} selected="selected" {{/if}}>La Rochelle</option>
+                                <option value="Lyon / FRANCE" {{#if (eq user.userLocation "Lyon / FRANCE")}} selected="selected" {{/if}}>Lyon</option>
+                                <option value="Marseille / FRANCE" {{#if (eq user.userLocation "Marseille / FRANCE")}} selected="selected" {{/if}}>Marseille</option>
+                                <option value="Nantes / FRANCE" {{#if (eq user.userLocation "Nantes / FRANCE")}} selected="selected" {{/if}}>Nantes</option>
+                                <option value="Nice / FRANCE" {{#if (eq user.userLocation "Nice / FRANCE")}} selected="selected" {{/if}}>Nice</option>
+                                <option value="Paris / FRANCE" {{#if (eq user.userLocation "Paris / FRANCE")}} selected="selected" {{/if}}>Paris</option>
+                                <option value="Reims / FRANCE" {{#if (eq user.userLocation "Reims / FRANCE")}} selected="selected" {{/if}}>Reims</option>
+                                <option value="Strasbourg / FRANCE" {{#if (eq user.userLocation "Strasbourg / FRANCE")}} selected="selected" {{/if}}>Strasbourg</option>
+                                <option value="Toulouse / FRANCE" {{#if (eq user.userLocation "Toulouse / FRANCE")}} selected="selected" {{/if}}>Toulouse</option>
                             </optgroup>
                             <optgroup label="great-britain">
-                                <option value="Birmingham / GREAT BRITAIN">Birmingham</option>
-                                <option value="London / GREAT BRITAIN">London</option>
-                                <option value="Manchester / GREAT BRITAIN">Manchester</option>
+                                <option value="Birmingham / GREAT BRITAIN" {{#if (eq user.userLocation "Birmingham / GREAT BRITAIN")}} selected="selected" {{/if}}>Birmingham</option>
+                                <option value="London / GREAT BRITAIN" {{#if (eq user.userLocation "London / GREAT BRITAIN")}} selected="selected" {{/if}}>London</option>
+                                <option value="Manchester / GREAT BRITAIN" {{#if (eq user.userLocation "Manchester / GREAT BRITAIN")}} selected="selected" {{/if}}>Manchester</option>
                             </optgroup>
                             <optgroup label="spain">
-                                <option value="Barcelona / SPAIN">Barcelona</option>
-                                <option value="Madrid / SPAIN">Madrid</option>
-                                <option value="Seville / SPAIN">Seville</option>
+                                <option value="Barcelona / SPAIN" {{#if (eq user.userLocation "Barcelona / SPAIN")}} selected="selected" {{/if}}>Barcelona</option>
+                                <option value="Madrid / SPAIN" {{#if (eq user.userLocation "Madrid / SPAIN")}} selected="selected" {{/if}}>Madrid</option>
+                                <option value="Seville / SPAIN" {{#if (eq user.userLocation "Seville / SPAIN")}} selected="selected" {{/if}}>Seville</option>
                             </optgroup>
                             <optgroup label="germany">
-                                <option value="Berlin / GERMANY">Berlin</option>
-                                <option value="Hamburg / GERMANY">Hamburg</option>
-                                <option value="Munich / GERMANY">Munich</option>
+                                <option value="Berlin / GERMANY" {{#if (eq user.userLocation "Berlin / GERMANY")}} selected="selected" {{/if}}>Berlin</option>
+                                <option value="Hamburg / GERMANY" {{#if (eq user.userLocation "Hamburg / GERMANY")}} selected="selected" {{/if}}>Hamburg</option>
+                                <option value="Munich / GERMANY" {{#if (eq user.userLocation "Munich / GERMANY")}} selected="selected" {{/if}}>Munich</option>
                             </optgroup>
                             <optgroup label="turkey">
-                                <option value="Ankara / TURKEY">Ankara</option>
-                                <option value="Istanbul / TURKEY">Istanbul</option>
-                                <option value="Izmir / TURKEY">Izmir</option>
+                                <option value="Ankara / TURKEY" {{#if (eq user.userLocation "Ankara / TURKEY")}} selected="selected" {{/if}}>Ankara</option>
+                                <option value="Istanbul / TURKEY" {{#if (eq user.userLocation "Istanbul / TURKEY")}} selected="selected" {{/if}}>Istanbul</option>
+                                <option value="Izmir / TURKEY" {{#if (eq user.userLocation "Izmir / TURKEY")}} selected="selected" {{/if}}>Izmir</option>
                             </optgroup>
                             <optgroup label="denmark">
-                                <option value="Aarhus / DENMARK">Aarhus</option>
-                                <option value="Copenhagen / DENMARK">Copenhagen</option>
-                                <option value="Odense / DENMARK">Odense</option>
+                                <option value="Aarhus / DENMARK" {{#if (eq user.userLocation "Aarhus / DENMARK")}} selected="selected" {{/if}}>Aarhus</option>
+                                <option value="Copenhagen / DENMARK" {{#if (eq user.userLocation "Copenhagen / DENMARK")}} selected="selected" {{/if}}>Copenhagen</option>
+                                <option value="Odense / DENMARK" {{#if (eq user.userLocation "Odense / DENMARK")}} selected="selected" {{/if}}>Odense</option>
                             </optgroup>
                             <optgroup label="serbia">
-                                <option value="Belgrade / SERBIA">Belgrade</option>
-                                <option value="Prizen / SERBIA">Prizen</option>
+                                <option value="Belgrade / SERBIA" {{#if (eq user.userLocation "Belgrade / SERBIA")}} selected="selected" {{/if}}>Belgrade</option>
+                                <option value="Prizen / SERBIA" {{#if (eq user.userLocation "Prizen / SERBIA")}} selected="selected" {{/if}}>Prizen</option>
                             </optgroup>
                         </select>
                     </label>
