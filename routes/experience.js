@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const fileUploader = require('../config/cloudinary.config');
 const queryString = require('query-string');
 const dayjs = require('dayjs')
+const helpers = require('handlebars-helpers')();
 
 
 
@@ -99,7 +100,7 @@ router.post("/new-experience/create", fileUploader.single('newxpimg'), (req, res
     
     const experienceOwner = req.session.currentUser._id;
     const experienceType = req.body.newxpcategory;
-    const experienceDateTime = new Date(`${req.body.newxpdate}T${req.body.newxptime}`);
+    const experienceDateTime = dayjs(new Date(`${req.body.newxpdate}T${req.body.newxptime}`)).format('DD/MM/YYYY');
     const experienceLocation = req.body.newxpcountrycity;
     const experienceDesc = req.body.newxpdesc;
     const experienceImg = req.file && req.file.path; // guard operator
@@ -122,7 +123,8 @@ router.post("/new-experience/create", fileUploader.single('newxpimg'), (req, res
       experienceOwner, experienceType, experienceDateTime, experienceLocation, experienceDesc, experienceImg
     })
       .then(function (createdExperience) {
-        console.log(dayjs(experienceDateTime).format('LLLL'))
+        let experienceDateTime2 = dayjs(experienceDateTime).format('ddd MMM DD')
+        console.log('Essai sur le format de date', experienceDateTime2)
         res.redirect("/user-profile/:id");
       })
       .catch((err) => {
